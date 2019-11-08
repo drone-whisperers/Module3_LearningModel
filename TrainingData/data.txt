@@ -31,7 +31,6 @@ Big Jet 345 climb immediately to FL 160 traffic at 12 oclock 3 miles opposite di
 Big Jet 345 descend immediately to FL 160 traffic at 12 oclock 3 miles opposite direction same level
 Big Jet 345 climb to FL180
 Big Jet 345 turn left to heading 310 degrees
-Big Jet 345 Metro Approach now information Q new QNH 998
 Big Jet 345 leave MAYFIELD heading 120 descend to 6000 feet QNH 998 speed 210 knots
 Big Jet 345 turn right heading 180 speed 180 knots vectoring ILS runway 27 Right
 Big Jet 345 turn right heading 240 descend to 3000 feet report established localiser runway 27 Right
@@ -39,6 +38,6 @@ Big Jet 345 cleared ILS approach runway 27 Right
 Big Jet 345 turn right heading 240 degrees cleared ILS approach runway 27 Right maintain 3000ft until glide-path interception
 Big Jet 345 continue approach
 Big Jet 345 cleared to land runway 27 Right wind 270 degrees ten knots
-Big Jet 345 go around
+Big Jet 345 go around	
 Big Jet 345 roger the MAYDAY turn left heading 090 radar vectors ILS runway 27
 Big Jet 345 roger turn right heading 140 for radar vectoring runway 09 descend to 3000 feet QNH 995 report established
