@@ -4,40 +4,70 @@ Big Jet 345 Metro Ground taxi to holding point A1 runway 18
 Big Jet 345 cross runway 18 at A1 taxi to holding point C runway 27
 Big Jet 345 Metro Delivery Cleared to Smallville T1A departure Squawk 3456 slot time 1905
 Big Jet 345 start up approved contact Metro Ground 118.750 for taxi instructions
+Big Jet 345 start up not approved contact Metro Ground 118.750
+Big Jet 345 start up not approved
 Big Jet 345 Metro Ground after the red and white Antonov with the purple fin taxi to holding point runway 08
 Big Jet 345 after landing Airbus 321 cross Runway 09 at C2 after
 Big Jet 345 taxi to holding point C1 runway 27
 Big Jet 345 contact Metro Tower 123.625
 Big Jet 345 Metro Tower line up runway 27
-Big Jet 345 runway 27 cleared for take-off
+Big Jet 345 runway 27 cleared for take off
+Big Jet 345 runway 27 not cleared for take off
 Big Jet 345 contact Metro Radar 124.6
 Big Jet 345 Metro Tower hold at C1
+Big Jet 345 hold position amendment to clearance T3F departure climb to altitude 6000 feet
 Big Jet 345 hold position amendment to clearance T3F departure climb to 6000 feet
 Big Jet 345 hold position after departure climb to altitude 6000 feet
+Big Jet 345 hold position after departure climb to 6000 feet
 Big Jet 345 Metro Tower hold at C1
 Big Jet 345 behind landing Boeing 757 line up runway 27 behind
-Big Jet 345 hold position Cancel take-off I say again cancel take-off due to vehicle on the runway
+Big Jet 345 hold position Cancel take off I say again cancel take off due to vehicle on the runway
+Big Jet 345 hold position
+Big Jet 345 hold position Cancel take off
 Big Jet 345 stop immediately
-Big Jet 345 runway 27 cleared for take-off
+Big Jet 345 stop
+Big Jet 345 runway 27 cleared for take off
+Big Jet 345 runway 27 not cleared for take off
 Big Jet 345 contact Metro Radar 124.6
 Big Jet 345 Metro Radar radar contact
-Big Jet 345 fly heading 260 (degrees) climb to FL 100 no speed restrictions
+Big Jet 345 fly heading 260 degrees climb to FL 100 no speed restrictions
+Big Jet 345 fly heading 260 degrees descend to FL 100 no speed restrictions
+Big Jet 345 fly heading 260 degrees ascend to FL 100 no speed restrictions
+Big Jet 345 fly heading 260 climb to FL 100 no speed restrictions
+Big Jet 345 fly heading 260 descend to FL 100 no speed restrictions
+Big Jet 345 fly heading 260 ascend to FL 100 no speed restrictions
 Big Jet 345 fly direct BONNY climb to FL 360
 Big Jet 345 contact Northern Control 132.6
 Big Jet 345 Northern Control fly direct CLYDE
+Big Jet 345 turn left heading 270
+Big Jet 345 turn right heading 270
+Big Jet 345 turn left immediately heading 270
+Big Jet 345 turn right immediately heading 270
 Big Jet 345 turn left immediately heading 270 to avoid traffic at 2 oclock 5 miles crossing right to left 500 feet below
-Big Jet 345 turn right immediately heading 30 to avoid traffic at 2 oclock 5 miles crossing right to left 500 feet below
+Big Jet 345 turn right immediately heading 30 to avoid traffic at 2 oclock 5 miles crossing right to left 500 feet above
 Big Jet 345 climb immediately to FL 160 traffic at 12 oclock 3 miles opposite direction same level
 Big Jet 345 descend immediately to FL 160 traffic at 12 oclock 3 miles opposite direction same level
 Big Jet 345 climb to FL180
 Big Jet 345 turn left to heading 310 degrees
 Big Jet 345 leave MAYFIELD heading 120 descend to 6000 feet QNH 998 speed 210 knots
 Big Jet 345 turn right heading 180 speed 180 knots vectoring ILS runway 27 Right
+Big Jet 345 turn left heading 180 speed 180 knots vectoring ILS runway 27 Left
 Big Jet 345 turn right heading 240 descend to 3000 feet report established localiser runway 27 Right
+Big Jet 345 turn right heading 240 climb to 3000 feet report established localiser runway 27 right
+Big Jet 345 turn left heading 240 descend to 3000 feet report established localiser runway 27 left
+Big Jet 345 turn left heading 240 climb to 3000 feet report established localiser runway 27 left
 Big Jet 345 cleared ILS approach runway 27 Right
-Big Jet 345 turn right heading 240 degrees cleared ILS approach runway 27 Right maintain 3000ft until glide-path interception
+Big Jet 345 cleared ILS approach runway 27 left
+Big Jet 345 turn right heading 240 degrees cleared ILS approach runway 27 Right maintain 3000 feet until glide path interception
+Big Jet 345 turn left heading 340 degrees cleared ILS approach runway 27 left maintain 3000 feet until glide path interception
+Big Jet 345 turn left heading 340 degrees cleared ILS approach runway 27 right maintain 3000 feet until glide path interception
 Big Jet 345 continue approach
-Big Jet 345 cleared to land runway 27 Right wind 270 degrees ten knots
+Big Jet 345 cleared to land runway 27 Right wind 270 degrees 10 knots
+Big Jet 345 cleared to land runway 27 left wind 270 degrees 10 knots
 Big Jet 345 go around	
 Big Jet 345 roger the MAYDAY turn left heading 090 radar vectors ILS runway 27
+Big Jet 345 roger the MAYDAY turn right heading 090 radar vectors ILS runway 27
 Big Jet 345 roger turn right heading 140 for radar vectoring runway 09 descend to 3000 feet QNH 995 report established
+Big Jet 345 roger turn left heading 240 for radar vectoring runway 09 descend to 3000 feet QNH 995 report established
+Big Jet 345 roger turn right heading 140 for radar vectoring runway 09 ascend to 3000 feet QNH 995 report established
+Big Jet 345 roger turn left heading 240 for radar vectoring runway 09 ascend to 3000 feet QNH 995 report established
