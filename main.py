@@ -19,7 +19,6 @@ EXCLUDE_SETS = {
 }
 LABEL_MATRIX = pd.read_csv(LABEL_MATRIX_URL)
 
-
 # Creates a bag of words (set).
 # Expects the dataset to be a list of sentences.
 # If exclude_numbers is enabled, will not add any numbers to the bagOfWords,
