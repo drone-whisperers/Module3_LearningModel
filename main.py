@@ -80,7 +80,7 @@ def isnumber(s):
         return False
 
 
-def encode(indices=[], sequence_encoding_length):
+def encode(sequence_encoding_length, indices=[]):
     featureVector = [0] * sequence_encoding_length
     
     for i in indices:
@@ -115,17 +115,17 @@ def encode_sequential(word_bag, sentence, sequence_encoding_length, exclude_numb
                 
     if exclude_numbers:
         for word in sentence.split():
-            if isNumber(word):
-                sentence.replace(word, numericalEncoding)
+            if isnumber(word):
+                sentence = sentence.replace(word, numericalEncoding)
         encodingMap[numericalEncoding] = []
     
     
     # Iterate through each word in the bag, encode 1 if this word is present in the sentence, 0 otherwise
     for word in word_bag:
         if word in sentence:
-            encodingMap[word] = encode(indices(word, sentence), sequence_encoding_length)
+            encodingMap[word] = encode(sequence_encoding_length, indices(word, sentence))
         else:
-            encodingMap[word] = encode(sequence_encoding_length=sequence_encoding_length)
+            encodingMap[word] = encode(sequence_encoding_length)
 
     return encodingMap
 
@@ -145,7 +145,7 @@ def create_feature_vector(word_bag, sentence, exclude_sets={}, exclude_set_encod
     excludeSetOccurrences = {}
 
     if sequence_encoding_length:
-        encode_sequential(word_bag, sentence, sequence_encoding_length, exclude_sets)
+        encode_sequential(word_bag, sentence, sequence_encoding_length, True, exclude_sets)
 
     # Instantiate excludeSetOccurrences based on exclude_sets
     for exclude_set in exclude_sets:
