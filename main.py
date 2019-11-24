@@ -15,8 +15,8 @@ ONE_HOT_ENCODE_NUMBERS_KEY = "one_hot_encode(numbers) key"
 ONE_HOT_ENCODE_NUMBERS = True
 USE_EXCLUDE_SETS = True
 EXCLUDE_SETS = {
-    "knownEntities": urlopen(KNOWN_ENTITIES_URL).read().splitlines(),
-    "knownLocations": urlopen(KNOWN_LOCATIONS_URL).read().splitlines()
+    "class(knownEntities)": urlopen(KNOWN_ENTITIES_URL).read().splitlines(),
+    "class(knownLocations)": urlopen(KNOWN_LOCATIONS_URL).read().splitlines()
 }
 LABEL_MATRIX = pd.read_csv(LABEL_MATRIX_URL)
 
@@ -80,28 +80,55 @@ def isnumber(s):
         return False
 
 
-def encode_sequential(word_bag, sentence, sequence_encoding_length, exclude_sets={}):
-    featureVector = []
+def encode(indices=[], sequence_encoding_length):
+    featureVector = [0] * sequence_encoding_length
+    
+    for i in indices:
+        featureVector[i] = 1
+    
+    return featureVector
 
-    # In string replacement of any excluded classes of entities from exclude_set with the class name of the entity
+
+def indices(target, sentence):
+    indices = []
+    i = 0
+    
+    for word in sentence.split():
+        if word == target:
+            indices.append(i)
+        i += 1
+        
+    return indices
+    
+    
+def encode_sequential(word_bag, sentence, sequence_encoding_length, exclude_numbers=True, exclude_sets={}):
+    encodingMap = {}
+    numericalEncoding = "class(number)"
+
+    # In-string replacement of any excluded classes of entities from exclude_set with the class name of the entity (this should be unique such that the class name would not appear in the word_bag)
     if exclude_sets:
-        for exclude_set in exclude_sets:
-            # Replace any classes from this exclude_set from the sentence
-            for excluded in exclude_sets[exclude_set]:
+        for excludeSetName in exclude_sets:
+            for excluded in exclude_sets[excludeSetName]:
                 if excluded in sentence:
-                    # strip any
-                    sentence = sentence.replace(excluded.strip(), exclude_set)
-
+                    sentence = sentence.replace(excluded.strip(), excludeSetName)
+        encodingMap[excludeSetName] = []
+                
+    if exclude_numbers:
+        for word in sentence.split():
+            if isNumber(word):
+                sentence.replace(word, numericalEncoding)
+        encodingMap[numericalEncoding] = []
+    
+    
     # Iterate through each word in the bag, encode 1 if this word is present in the sentence, 0 otherwise
     for word in word_bag:
         if word in sentence:
-            count = sentence.count(word)
-            featureVector.append(1)
+            encodingMap[word] = encode(indices(word, sentence), sequence_encoding_length)
         else:
-            for i in range(0, sequence_encoding_length):
-                featureVector.append(0)
+            encodingMap[word] = encode(sequence_encoding_length=sequence_encoding_length)
 
-    print ("hello world")
+    return encodingMap
+
 
 # Create a feature vector for a sentence, based on the bag of words.
 # If exclude_sets are provided, then any word contained within an exclude set
