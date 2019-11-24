@@ -10,6 +10,7 @@ KNOWN_ENTITIES_URL = 'https://raw.githubusercontent.com/drone-whisperers/Module3
 KNOWN_LOCATIONS_URL = 'https://raw.githubusercontent.com/drone-whisperers/Module3_LearningModel/master/TrainingData/knownlocations.txt'
 LABEL_MATRIX_URL = 'https://raw.githubusercontent.com/drone-whisperers/Module3_LearningModel/master/TrainingData/labelMatrix.csv'
 DATA_SET = urlopen(DATASET_URL).read().splitlines()
+USE_SEQUENTIAL_ENCODING = True
 ONE_HOT_ENCODE_NUMBERS_KEY = "one_hot_encode(numbers) key"
 ONE_HOT_ENCODE_NUMBERS = True
 USE_EXCLUDE_SETS = True
@@ -27,6 +28,7 @@ LABEL_MATRIX = pd.read_csv(LABEL_MATRIX_URL)
 def create_word_bag(data_set, exclude_sets={}, exclude_numbers=False):
     wordBag = set()
     excludeSetEncodingLegend = {}
+    maxSequenceLength = 0           # This is used to determine the sequence length necessary to encode each example in the data set
 
     # Instantiate excludeSetEncodingLegend based on exclude_sets
     for exclude_set in exclude_sets:
@@ -36,6 +38,7 @@ def create_word_bag(data_set, exclude_sets={}, exclude_numbers=False):
 
     for example in data_set:
         numericOccurrences = 0
+        sequenceLength = 0
 
         # Remove any words in the exclude_sets from inclusion in the bag of words
         for exclude_set in exclude_sets:
@@ -43,6 +46,7 @@ def create_word_bag(data_set, exclude_sets={}, exclude_numbers=False):
             for excluded in exclude_sets[exclude_set]:
                 if excluded in example:
                     excludeSetOccurrences += 1
+                    sequenceLength += example.count(excluded)           # Increment sequenceLength by the number of occurrences of the excluded value in the sentence
                     example = example.replace(excluded, "")
 
             # Compare number of occurrences of excluded_set to current max
@@ -51,6 +55,7 @@ def create_word_bag(data_set, exclude_sets={}, exclude_numbers=False):
 
         # Iterate through each word in the example, add each word to the bag
         for word in example.split():
+            sequenceLength += 1
             # Determine the maximum number of instances of a number (for a single example in the data set)
             if exclude_numbers and isnumber(word):
                 numericOccurrences += 1
@@ -58,11 +63,13 @@ def create_word_bag(data_set, exclude_sets={}, exclude_numbers=False):
 
             wordBag.add(word)
 
+        maxSequenceLength = max(sequenceLength, maxSequenceLength)
+
         # Compare number of occurrences of numbers to current max
         if exclude_numbers:
             excludeSetEncodingLegend[ONE_HOT_ENCODE_NUMBERS_KEY] = max(numericOccurrences, excludeSetEncodingLegend[ONE_HOT_ENCODE_NUMBERS_KEY])
 
-    return wordBag, excludeSetEncodingLegend
+    return wordBag, excludeSetEncodingLegend, maxSequenceLength
 
 
 def isnumber(s):
@@ -71,6 +78,30 @@ def isnumber(s):
         return True
     except ValueError:
         return False
+
+
+def encode_sequential(word_bag, sentence, sequence_encoding_length, exclude_sets={}):
+    featureVector = []
+
+    # In string replacement of any excluded classes of entities from exclude_set with the class name of the entity
+    if exclude_sets:
+        for exclude_set in exclude_sets:
+            # Replace any classes from this exclude_set from the sentence
+            for excluded in exclude_sets[exclude_set]:
+                if excluded in sentence:
+                    # strip any
+                    sentence = sentence.replace(excluded.strip(), exclude_set)
+
+    # Iterate through each word in the bag, encode 1 if this word is present in the sentence, 0 otherwise
+    for word in word_bag:
+        if word in sentence:
+            count = sentence.count(word)
+            featureVector.append(1)
+        else:
+            for i in range(0, sequence_encoding_length):
+                featureVector.append(0)
+
+    print ("hello world")
 
 # Create a feature vector for a sentence, based on the bag of words.
 # If exclude_sets are provided, then any word contained within an exclude set
@@ -82,9 +113,12 @@ def isnumber(s):
 #     1 - the one hot encoding would be 1 0 0 0 0
 #     2 - the one hot encoding would be 0 1 0 0 0
 # ... etc.)
-def create_feature_vector(word_bag, sentence, exclude_sets={}, exclude_set_encoding_length={}):
+def create_feature_vector(word_bag, sentence, exclude_sets={}, exclude_set_encoding_length={}, sequence_encoding_length=0):
     featureVector = []
     excludeSetOccurrences = {}
+
+    if sequence_encoding_length:
+        encode_sequential(word_bag, sentence, sequence_encoding_length, exclude_sets)
 
     # Instantiate excludeSetOccurrences based on exclude_sets
     for exclude_set in exclude_sets:
@@ -93,7 +127,7 @@ def create_feature_vector(word_bag, sentence, exclude_sets={}, exclude_set_encod
     # Ensure items in the excludeSets are not encoded in featureVector
     if exclude_sets:
         for exclude_set in exclude_sets:
-            # Remove any words in the exclude_set from inclusion in the bag of words
+            # Remove any words in the exclude_set from the sentence
             for excluded in exclude_sets[exclude_set]:
                 if excluded in sentence:
                     excludeSetOccurrences[exclude_set] += 1
@@ -134,16 +168,16 @@ def create_feature_vector(word_bag, sentence, exclude_sets={}, exclude_set_encod
     return featureVector
 
 
-def create_data_frame(dataset, exclude_sets={}, exclude_numbers=False):
+def create_data_frame(dataset, exclude_sets={}, exclude_numbers=False, sequential_encoding=False):
     featureVectors = []
-    wordBag, excludeSetEncodingLegend = create_word_bag(data_set=dataset,
-                                                        exclude_sets=exclude_sets,
-                                                        exclude_numbers=exclude_numbers)
+    wordBag, excludeSetEncodingLegend, maxSequenceLength = create_word_bag(data_set=dataset,
+                                                                           exclude_sets=exclude_sets,
+                                                                           exclude_numbers=exclude_numbers)
 
     # Create a feature vector for each example in the data set
     for example in dataset:
         featureVectors.append(
-            create_feature_vector(wordBag, example, exclude_sets, excludeSetEncodingLegend))
+            create_feature_vector(wordBag, example, exclude_sets, excludeSetEncodingLegend, maxSequenceLength))
 
     # Create a list from the word bag to be used as the columns for the data frame.
     # The following steps will be modifying this list, as such it is import to retain the current ordering
