@@ -81,12 +81,12 @@ def isnumber(s):
 
 
 def encode(sequence_encoding_length, indices=[]):
-    featureVector = [0] * sequence_encoding_length
+    encoding = [0] * sequence_encoding_length
     
     for i in indices:
-        featureVector[i] = 1
+        encoding[i] = 1
     
-    return featureVector
+    return encoding
 
 
 def indices(target, sentence):
@@ -111,15 +111,20 @@ def encode_sequential(word_bag, sentence, sequence_encoding_length, exclude_numb
             for excluded in exclude_sets[excludeSetName]:
                 if excluded in sentence:
                     sentence = sentence.replace(excluded.strip(), excludeSetName)
-        encodingMap[excludeSetName] = []
                 
     if exclude_numbers:
         for word in sentence.split():
             if isnumber(word):
                 sentence = sentence.replace(word, numericalEncoding)
-        encodingMap[numericalEncoding] = []
+        encodingMap[numericalEncoding] 
     
-    
+    if exclude_sets:
+        for excludeSetName in exclude_sets:
+            encodingMap[excludeSetName] = encode(sequence_encoding_length, indices(excludeSetName, sentence))
+            
+    if exclude_numbers:
+        encodingMap[numericalEncoding] = encode(sequence_encoding_length, indices(numericalEncoding, sentence))
+        
     # Iterate through each word in the bag, encode 1 if this word is present in the sentence, 0 otherwise
     for word in word_bag:
         if word in sentence:
