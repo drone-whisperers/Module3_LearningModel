@@ -2,12 +2,14 @@ Big Jet 345 Metro Ground taxi to holding point C runway 27
 Big Jet 345 taxi to holding point C runway 27 Metro Ground
 Big Jet 345 contact Metro Tower 119.2
 Big Jet 345 Metro Ground taxi to holding point A1 runway 18
+Big Jet 345 taxi to holding point A1 runway 18 Metro Ground
 Big Jet 345 cross runway 18 at A1 taxi to holding point C runway 27
 Big Jet 345 Metro Delivery Cleared to Smallville T1A departure Squawk 3456 slot time 1905
 Big Jet 345 start up approved contact Metro Ground 118.750 for taxi instructions
 Big Jet 345 start up not approved contact Metro Ground 118.750
 Big Jet 345 start up not approved
 Big Jet 345 Metro Ground after the red and white Antonov with the purple fin taxi to holding point runway 08
+Big Jet 345 after the red and white Antonov with the purple fin taxi to holding point runway 08 Metro Ground
 Big Jet 345 after landing Airbus 321 cross Runway 09 at C2 after
 Big Jet 345 taxi to holding point C1 runway 27
 Big Jet 345 contact Metro Tower 123.625
