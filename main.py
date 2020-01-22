@@ -1,21 +1,21 @@
 # Load libraries...
-from urllib import urlopen
+import os.path
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from Encoder import Encoder
 
-DATASET_URL = 'https://raw.githubusercontent.com/drone-whisperers/Module3_LearningModel/dclaremont/useSequentialEncoding/TrainingData/data.txt'
-KNOWN_ENTITIES_URL = 'https://raw.githubusercontent.com/drone-whisperers/Module3_LearningModel/master/TrainingData/knownentities.txt'
-KNOWN_LOCATIONS_URL = 'https://raw.githubusercontent.com/drone-whisperers/Module3_LearningModel/master/TrainingData/knownlocations.txt'
-LABEL_MATRIX_URL = 'https://raw.githubusercontent.com/drone-whisperers/Module3_LearningModel/dclaremont/useSequentialEncoding/TrainingData/labelMatrix.csv'
-DATA_SET = urlopen(DATASET_URL).read().splitlines()
-LABEL_MATRIX = pd.read_csv(LABEL_MATRIX_URL)
+#Global Default Settings
 USE_SEQUENTIAL_ENCODING = True
 EXCLUDE_NUMBERS = True
+
+#Gather training data
+my_path = os.path.abspath(os.path.dirname(__file__))
+DATA_SET = open(os.path.join(my_path, "./TrainingData/data.txt"), "r").read().splitlines()
+LABEL_MATRIX = pd.read_csv(os.path.join(my_path, "./TrainingData/labelMatrix.csv"))
 EXCLUDE_SETS = {
-    "class(knownEntities)": urlopen(KNOWN_ENTITIES_URL).read().splitlines(),
-    "class(knownLocations)": urlopen(KNOWN_LOCATIONS_URL).read().splitlines()
+    "class(knownEntities)":  open(os.path.join(my_path, "./TrainingData/knownEntities.txt"), "r").read().splitlines(),
+    "class(knownLocations)": open(os.path.join(my_path, "./TrainingData/knownLocations.txt"), "r").read().splitlines()
 }
 
 #Instantiate and initialize an encoder
@@ -41,13 +41,15 @@ for label in ['taxi', 'contact']:
     df.set_index(label, inplace=True)
 
     # Train logistic regression classifier with full data set
-    x_train, x_test, y_train, y_test = train_test_split(df.values, df.index, test_size=0.25, stratify=df.index)
+    x_train, x_test, y_train, y_test = train_test_split(df.values, df.index, test_size=0.05, stratify=df.index)
     lr_classifier = LogisticRegression(solver='lbfgs', max_iter=5000)
     lr_classifier.fit(x_train, y_train)
     y_pred = lr_classifier.predict(x_test)
     print ("Logistic Regression Classifier (" + label + ") accuracy score: %2.2f" % (
             lr_classifier.score(x_test, y_test) * 100))
 
+    lr_classifier.predict(
+        [encoder.create_feature_vector("Big Jet 345 taxi to holding point C1 runway 99 Metro Ground")])
     # clean up dataframe for next iteration, reset index of data frame and drop the trainingLabel column
     df.reset_index(inplace=True)
     df.drop(columns=[label], inplace=True)

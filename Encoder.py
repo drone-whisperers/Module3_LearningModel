@@ -1,6 +1,7 @@
 import pandas as pd
 
 ONE_HOT_ENCODE_NUMBERS_KEY = "class(numbers)"
+WILDCARD_CHARACTER = "*"
 
 class Encoder:
     _use_sequential_encoding = False
@@ -66,7 +67,8 @@ class Encoder:
                 if self._exclude_sets.has_key(ONE_HOT_ENCODE_NUMBERS_KEY) and self.__isnumber(word):
                     numeric_occurrences += 1
                     continue
-
+                if word == WILDCARD_CHARACTER:
+                    continue
                 word_bag.add(word)
 
             max_sequence_length = max(sequence_length, max_sequence_length)
@@ -116,7 +118,7 @@ class Encoder:
             if word in self._feature_vector_columns:
                 if word == target:
                     indices.append(i)
-                i += 1
+            i += 1
 
         return indices
 
@@ -150,7 +152,7 @@ class Encoder:
 
         # Add encoding of each word to the encoding_map
         for word in self._word_bag:
-            if word in sentence:
+            if word in sentence.split():
                 encoding_map[word] = self.__encode(self._max_sequence_length, self.__getMatchIndices(word, sentence, self._word_bag))
             else:
                 encoding_map[word] = self.__encode(self._max_sequence_length)
@@ -192,7 +194,7 @@ class Encoder:
 
         # Iterate through each word in the bag, encode 1 if this word is present in the sentence, 0 otherwise
         for word in self._word_bag:
-            if word in sentence:
+            if word in sentence.split():
                 encoding_map[word] = [1]
             else:
                 encoding_map[word] = [0]
