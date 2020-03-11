@@ -27,7 +27,6 @@ class Encoder:
 
     def set_dataset(self, dataset):
         self._dataset = dataset
-        print ("Hello World")
 
     # Initializes Encoder for use.
     # Creates a bag of words (set).
@@ -64,7 +63,7 @@ class Encoder:
             for word in example.split():
                 sequence_length += 1
                 # Determine the maximum number of instances of a number (for a single example in the data set)
-                if self._exclude_sets.has_key(ONE_HOT_ENCODE_NUMBERS_KEY) and self.__isnumber(word):
+                if ONE_HOT_ENCODE_NUMBERS_KEY in self._exclude_sets.keys() and self.__isnumber(word):
                     numeric_occurrences += 1
                     continue
                 if word == WILDCARD_CHARACTER:
@@ -74,7 +73,7 @@ class Encoder:
             max_sequence_length = max(sequence_length, max_sequence_length)
 
             # Compare number of occurrences of numbers to current max
-            if self._exclude_sets.has_key(ONE_HOT_ENCODE_NUMBERS_KEY):
+            if ONE_HOT_ENCODE_NUMBERS_KEY in self._exclude_sets.keys():
                 exclude_set_occurence_map[ONE_HOT_ENCODE_NUMBERS_KEY] = max(numeric_occurrences, exclude_set_occurence_map[ONE_HOT_ENCODE_NUMBERS_KEY])
 
         self._word_bag = word_bag

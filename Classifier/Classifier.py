@@ -34,7 +34,7 @@ df = encoder.create_data_frame()
 # Each iteration will modify the dataframe with the labelled values and train the classifier models
 #for label in LABEL_MATRIX.columns:
 for label in ['taxi', 'contact']:
-    print ("Training models to classify " + label + " commands.")
+    print("Training models to classify " + label + " commands.")
 
     # set index of dataframe to labels, use unique header 'trainingLabel' to avoid collision with the underlying dataset
     df[label] = LABEL_MATRIX[label]
