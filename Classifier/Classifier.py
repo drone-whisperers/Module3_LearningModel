@@ -15,8 +15,6 @@ class Classifier:
     _init = False
 
     def __init_encoder(self):
-
-
         #Gather training data
         my_path = os.path.abspath(os.path.dirname(__file__))
         DATA_SET = open(os.path.join(my_path, "./TrainingData/data.txt"), "r").read().splitlines()
