@@ -14,7 +14,7 @@ class Classifier:
     _classifiers = {}
     _init = False
 
-    def __init_encoder(self):
+    def __init_classifier(self):
         #Gather training data
         my_path = os.path.abspath(os.path.dirname(__file__))
         DATA_SET = open(os.path.join(my_path, "./TrainingData/data.txt"), "r").read().splitlines()
@@ -63,7 +63,7 @@ class Classifier:
     def classify(self, sentence):
         classifications = {}
         if not self._init:
-            self.__init_encoder()
+            self.__init_classifier()
 
 
         for classifier in self._classifiers.keys():

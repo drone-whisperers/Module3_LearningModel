@@ -1,12 +1,9 @@
 import os, sys
-
+import numpy as np
 from keras.models import Model
 from keras.layers import Input, LSTM, GRU, Dense, Embedding
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
-from keras.utils import to_categorical
-import numpy as np
-import matplotlib.pyplot as plt
 
 my_path = os.path.abspath(os.path.dirname(__file__))
 
@@ -116,7 +113,7 @@ from numpy import zeros
 
 embeddings_dictionary = dict()
 
-open(os.path.join(my_path, "./TrainingData/glove.6B.100d.txt"), "r").read().splitlines()
+#open(os.path.join(my_path, "./TrainingData/glove.6B.100d.txt"), "r").read().splitlines()
 glove_file = open(os.path.join(my_path, "./TrainingData/glove.6B.100d.txt"), encoding="utf8")
 
 #Load all word embeddings from pretrained set (GLoVE)
