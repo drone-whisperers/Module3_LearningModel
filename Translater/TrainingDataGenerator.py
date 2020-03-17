@@ -42,7 +42,7 @@ class TrainingDataGenerator:
         x = f"{aircraft_name} fly heading {heading} {pitch} to flight level {flight_level} {speed_cmd}"
 
         if neg_parameter is None:
-            y = f"fly {heading} {pitch} {flight_level} {speed_restriction}"
+            y = f"fly ({heading}, {pitch}, {flight_level}, {speed_restriction})"
         else:
             y = f"{neg_parameter} value out of expected range"
         return f"{x} \t {y}"
@@ -61,7 +61,7 @@ class TrainingDataGenerator:
 
         x = f"{aircraft_name} fly direct {destination} {pitch_cmd} to flight level {flight_level}"
         if neg_parameter is None:
-            y = f"fly {destination} {pitch} {flight_level} 0"
+            y = f"fly ({destination}, {pitch}, {flight_level}, 0)"
         else:
             y = f"{neg_parameter} value out of expected range"
         return f"{x} \t {y}"
@@ -80,7 +80,7 @@ class TrainingDataGenerator:
 
         x = f"{aircraft_name} hold position after departure {pitch_cmd} to altitude {altitude} feet"
         if neg_parameter is None:
-            y = f"fly 0 {pitch} {altitude}"
+            y = f"fly (0, {pitch}, {altitude}, 0)"
         else:
             y = f"{neg_parameter} value out of expected range"
         return f"{x} \t {y}"
@@ -102,7 +102,7 @@ class TrainingDataGenerator:
 
         x = f"{aircraft_name} contact {airport_name} {airport_entity} {channel} {reason_cmd}"
         if neg_parameter is None:
-            y = f"contact {channel} {reason}"
+            y = f"contact ({channel}, {reason})"
         else:
             y = f"{neg_parameter} value out of expected range"
         return f"{x} \t {y}"
@@ -126,7 +126,7 @@ class TrainingDataGenerator:
 
         x = f"{aircraft_name} {action} {approval_status} contact {airport_name} {airport_entity} {channel} {reason_cmd}"
         if neg_parameter is None:
-            y = f"{action.replace(' ', '_')} {approval_status.replace(' ', '_')} and contact {channel} {reason}"
+            y = f"{action.replace(' ', '_')} ({approval_status.replace(' ', '_')}) and contact ({channel}, {reason})"
         else:
             y = f"{neg_parameter} value out of expected range"
         return f"{x} \t {y}"

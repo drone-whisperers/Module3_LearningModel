@@ -45,7 +45,6 @@ class Translater:
                 training_data_generator = TrainingDataGenerator()
                 training_data_generator.generate(neg_prop=NEGATIVE_EXAMPLE_PROPORTION)
 
-
             #Load state of Translater
             input_sentences, output_sentences, output_sentences_inputs = self.__process_training_data()
             encoder_input_sequences, self._word2idx_input, self._input_tokenizer = self.__tokenize_sentences(input_sentences, input_sentences, None)
