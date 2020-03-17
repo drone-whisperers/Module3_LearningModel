@@ -6,8 +6,8 @@ translater.init_translater()
 
 #Generate new data for testing
 trainingDataGenerator = TrainingDataGenerator()
-fly_cmd_examples = trainingDataGenerator.generate(to_file=False, fly_training_examples=1000, contact_training_examples=0)
-contact_cmd_examples = trainingDataGenerator.generate(to_file=False, fly_training_examples=0, contact_training_examples=1000)
+fly_cmd_examples = trainingDataGenerator.generate(to_file=False, num_fly_train_examples=1000, num_contact_train_examples=0, neg_prop=0.1)
+contact_cmd_examples = trainingDataGenerator.generate(to_file=False, num_fly_train_examples=0, num_contact_train_examples=1000, neg_prop=0.1)
 cmd_examples = {'fly':fly_cmd_examples, 'contact':contact_cmd_examples}
 
 cmd_class_test_results = {}
@@ -25,7 +25,7 @@ for cmd_class in cmd_examples.keys():
             correct_translation += 1
         else:
             incorrect_translation += 1
-            incorrect_translations[expected_translation] = actual_translation
+            incorrect_translations[cmd] = {"expected_translation": expected_translation, "actual_translation": actual_translation}
 
     cmd_class_test_results[cmd_class] = {'correct_translations':correct_translation, 'incorrect_translation':incorrect_translation, 'incorrect_translations':incorrect_translations}
 

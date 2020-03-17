@@ -1,4 +1,4 @@
-import os, sys
+import os
 import numpy as np
 from numpy import asarray, zeros
 from keras.models import Model, load_model
@@ -9,12 +9,13 @@ from TrainingDataGenerator import TrainingDataGenerator
 from keras.callbacks import ModelCheckpoint
 
 BATCH_SIZE = 64
-EPOCHS = 10
+EPOCHS = 15
 LSTM_NODES =256
 MAX_SENTENCE_LENGTH = 50
 MAX_NUM_WORDS = 2000
 EMBEDDING_SIZE = 100
-DROPOUT = 0.25
+DROPOUT = 0.3
+NEGATIVE_EXAMPLE_PROPORTION=0.15
 GLOVE_FILE = "./TrainingData/glove.6B.100d.txt"
 TRAINING_DATA = "./TrainingData/generated.training.data.txt"
 ENCODER_MODEL_SAVE_FILE = "./Model/encoder.model"
@@ -36,11 +37,13 @@ class Translater:
     _word2idx_output = None
     _input_tokenizer = None
 
+    # Initialize Translater. Loads the already trained model and recreates the Translater's state using the trained data.
+    # Only useful if these are available in the expected locations.
     def init_translater(self):
         if os.path.isfile(ENCODER_MODEL_SAVE_FILE) and os.path.isfile(DECODER_MODEL_SAVE_FILE):
             if not os.path.isfile(TRAINING_DATA):
                 training_data_generator = TrainingDataGenerator()
-                training_data_generator.generate()
+                training_data_generator.generate(neg_prop=NEGATIVE_EXAMPLE_PROPORTION)
 
 
             #Load state of Translater
@@ -63,10 +66,12 @@ class Translater:
 
             self._init = True
 
+    # Default initialization method. Generates training data, if it is not in the expected location. Then creates a model
+    # and trains it. Saves model for future use.
     def __init_translater(self):
         if not os.path.isfile(TRAINING_DATA):
             training_data_generator = TrainingDataGenerator()
-            training_data_generator.generate()
+            training_data_generator.generate(neg_prop=NEGATIVE_EXAMPLE_PROPORTION)
 
         input_sentences, output_sentences, output_sentences_inputs = self.__process_training_data()
         encoder_input_sequences, self._word2idx_input, self._input_tokenizer = self.__tokenize_sentences(input_sentences, input_sentences, None)
@@ -112,11 +117,13 @@ class Translater:
 
         self._init = True
 
-    def __init_data(self):
-
-
-        return
-
+    # Initial processing for training data. Reads all training data and splits each example into 3 parts.
+    #
+    # Ex.
+    #   'Cessna 212 contact Phoenix Tower 133.0  	 contact 133.0'
+    #       input_sentence - "Cessna 212 contact Phoenix Tower 133.0"
+    #       output_sentence - "contact 133.0 <eos>"
+    #       output_sentence_input - "<sos>contact 133.0"
     def __process_training_data(self):
         input_sentences = []
         output_sentences = []
@@ -141,6 +148,30 @@ class Translater:
 
         return input_sentences, output_sentences, output_sentences_inputs
 
+    # Tokenizes sentences.
+    # @fit - to fit tokenizer, impacts the assignment of tokens to words
+    # @sentences - sentences to tokenize
+    # @filters
+
+    # Ex. 2 sentences, total of  6 words,
+    #   sentence1: the black cat
+    #   sentence2: a red dog
+    #
+    # A token is arbitrarily assigned to each word, example
+    #   the - 1
+    #   black - 2
+    #   cat - 3
+    #   a - 4
+    #   red - 5
+    #   dog - 6
+    # Then the tokenized sentences are:
+    #   sentence1: 1 2 3
+    #   sentence2: 4 5 6
+    #
+    # Returns
+    #   @sequences - list of all tokenized sentences
+    #   @word2idx - a map containing a mapping of integer tokens to words (key -> word, value -> token)
+    #   @tokenizer - the tokenizer object, necessary when making translations of new sentences (not from training data)
     def __tokenize_sentences(self, fit, sentences, filters):
         if filters is None:
             tokenizer = Tokenizer(num_words=MAX_NUM_WORDS)
@@ -153,12 +184,33 @@ class Translater:
 
         return sequences, word2idx, tokenizer
 
+    # Pads the tokenized sequences. Padding amount is determined by the longest sequence.
+    #
+    # @sequences - sequences to pad
+    # @padding - either 'pre' or 'post' and pads accordingly
+    #
+    # Ex. padding = 'pre'
+    #  sequence = 4 6 9 8
+    #  padded_sequence = 0 0 0 4 6 9 8
     def __pad_sequences(self, sequences, padding):
         max_len = max(len(sen) for sen in sequences)
         padded_sequence = pad_sequences(sequences, maxlen=max_len, padding=padding)
 
         return padded_sequence
 
+    # Create a word embedding matrix for each word from the training data
+    # A word embedding essentially a vector of associated words. So for each word in our training data,
+    # we associate the word embedding (which is provided by GLoVE project - https://nlp.stanford.edu/projects/glove/).
+    # This improves the Model's ability to learn associations. The Word embedding itself is a vector of numbers, where
+    # number essentially represents an association with another word.
+    #
+    # Ex.
+    #    Word -> cat
+    #    Token -> 5
+    #
+    #    EmbeddingMatrix[5] = wordEmbedding(cat)
+    #
+    # where wordEmbedding(cat) is actually something like [45 -35 67 -2 4 ...
     def __create_word_embedding_matrix(self, word2idx):
         embeddings_dictionary = dict()
 
@@ -227,6 +279,16 @@ class Translater:
 
         return decoder_dense, decoder_outputs
 
+    # Compile the model and fit(train) to the data. Use a callback to save the best weights that occur throughout
+    # training (uses validation accuracy as metric to determine 'best'). Loads the best performing weights before
+    # returning the model.
+    #
+    # @encoder_inputs_placeholder -
+    # @decoder_inputs_placeholder -
+    # @decoder_outputs -
+    # @encoder_input_sequences -
+    # @decoder_input_sequences -
+    # @decoder_targets_one_hot -
     def __compile_and_fit_model(self, encoder_inputs_placeholder, decoder_inputs_placeholder, decoder_outputs, encoder_input_sequences, decoder_input_sequences, decoder_targets_one_hot):
         model = Model([encoder_inputs_placeholder,
           decoder_inputs_placeholder], decoder_outputs)
@@ -249,6 +311,8 @@ class Translater:
         model.load_weights(BEST_MODEL_WEIGHTS_FILE)
         return model
 
+    # Modify model for predictions, since during actual prediction/translation the entire output is not known at the
+    # beginning and is instead predicted word by word over each time step.
     def __modify_model_for_predictions(self, encoder_inputs_placeholder, encoder_states, decoder_embedding, decoder_lstm, decoder_dense):
         encoder_model = Model(encoder_inputs_placeholder, encoder_states)
 
@@ -271,6 +335,13 @@ class Translater:
 
         return encoder_model, decoder_model
 
+    # Translate a sequence (must be padded) using the seq2seq model
+    #
+    # @input_seq - padded input sequence representing a sentence. Sequence must be encoded using same token
+    #              mappings as during training.
+    #
+    # Return
+    #   translated sentence
     def _translate_sequence(self, input_seq):
         states_value = self._encoder_model.predict(input_seq)
         target_seq = np.zeros((1, 1))
@@ -285,8 +356,6 @@ class Translater:
             if eos == idx:
                 break
 
-            word = ''
-
             if idx > 0:
                 word = self._idx2word_target[idx]
                 output_sentence.append(word)
@@ -296,6 +365,12 @@ class Translater:
 
         return ' '.join(output_sentence)
 
+    # Translate a sentence using the seq2seq model
+    # @sentence - sentence to translate
+    # @print_translation - if True prints input and translation to console
+    #
+    # Return
+    #   translated sentence
     def translate_sentence(self, sentence, print_translation=True):
         if not self._init:
             self.__init_translater()
