@@ -7,7 +7,7 @@ class Encoder:
     _use_sequential_encoding = False
     _exclude_sets = {}
     _dataset = list()
-    _word_bag = set()
+    _word_bag = list()
     _max_sequence_length = 0
     _init = False
     _exclude_set_occurrence_map = {}
@@ -34,7 +34,7 @@ class Encoder:
     # If exclude_numbers is enabled, will not add any numbers to the bagOfWords,
     # will return the max number of instances of a number (for a single example in the data set).
     # If an excludeSet is provided, any items in this list will not be included in the bagOfWords
-    def __init_encoder(self):
+    def init_encoder(self):
         word_bag = set()
         exclude_set_occurence_map = {}    # This is used to determine the maximum # of occurrences in a single example for each excludeSetName
         max_sequence_length = 0           # This is used to determine the maximum sequence length in the data set (This is not the same as word count)
@@ -76,7 +76,7 @@ class Encoder:
             if ONE_HOT_ENCODE_NUMBERS_KEY in self._exclude_sets.keys():
                 exclude_set_occurence_map[ONE_HOT_ENCODE_NUMBERS_KEY] = max(numeric_occurrences, exclude_set_occurence_map[ONE_HOT_ENCODE_NUMBERS_KEY])
 
-        self._word_bag = word_bag
+        self._word_bag = list(word_bag)
         self._max_sequence_length = max_sequence_length
         self._init = True
         self._exclude_set_occurrence_map = exclude_set_occurence_map
@@ -213,7 +213,7 @@ class Encoder:
     def create_data_frame(self):
         feature_vectors = []
         if not self._init:
-            self.__init_encoder()
+            self.init_encoder()
 
         # Create a feature vector for each example in the data set
         for example in self._dataset:
@@ -232,7 +232,7 @@ class Encoder:
 
     def create_feature_vector(self, sentence):
         if not self._init:
-            self.__init_encoder()
+            self.init_encoder()
 
         if self._use_sequential_encoding:
             encoding_map = self.__encode_sequential(sentence)

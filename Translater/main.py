@@ -31,3 +31,6 @@ for cmd_class in cmd_examples.keys():
 
 print(f"Fly Commands: {cmd_class_test_results['fly']}")
 print(f"Contact Commands: {cmd_class_test_results['contact']}")
+
+
+print ("Hello World")

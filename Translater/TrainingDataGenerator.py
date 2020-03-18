@@ -8,7 +8,7 @@ DEFAULT_CONTACT_TRAINING_EXAMPLES = 15000
 AIRCRAFT_NAMES = ["Big Jet", "Airbus", "Cessna", "Boeing", "Lockheed", "Supermarine Spitfire"]
 AIRPORT_NAMES = ["LaGuardia", "Kennedy", "Pearson", "Bush", "Phoenix"]
 AIRPORT_ENTITIES = ["Ground", "Tower", "Radar"]
-CONTACT_REASONS = [None, "taxi", "further", "takeoff", "startup", "next", "landing", "navigation"]
+CONTACT_REASONS = ["taxi", "further", "takeoff", "startup", "next", "landing", "navigation"]
 DESTINATIONS = ["BONNY", "CLYDE", "SUNNY", "CALI"]
 ACTIONS = ["take off", "start up", "taxi", "land", "ILS approach"]
 PITCH = ["ascend", "descend"]
@@ -47,7 +47,7 @@ class TrainingDataGenerator:
             y = f"{neg_parameter} value out of expected range"
         return f"{x} \t {y}"
 
-    # Generate a training example for a fly command to hold current position, after departure ascend/descend to altitude
+    # Generate a training example for a fly command to fly direct to a location, ascend/descend to a new flight level
     #
     # @aircraft_name - name of aircraft
     # @pitch - ascend/descend
@@ -66,21 +66,21 @@ class TrainingDataGenerator:
             y = f"{neg_parameter} value out of expected range"
         return f"{x} \t {y}"
 
-    # Generate a training example for a fly command to hold current position, after departure ascend/descend to altitude
+    # Generate a training example for a contact command with a  reason
     #
     # @aircraft_name - name of aircraft
-    # @pitch - ascend/descend
-    # @altitude - altitude to ascend/descend to
+    # @airport_name - name of airport to contact
+    # @airport_entity - name of entity at airport to contact
+    # @channel - channel to contact airport_entity
+    # @reason - reason to contact airport_entity
     # @neg_parameter - if specified, indicates the parameter has a value out of expected range, generates a negative training example
-    def __create_fly_training_example_3(self, aircraft_name, pitch, altitude, neg_parameter=None):
-        if pitch == "ascend":
-            pitch_cmd = "climb"
-        else:
-            pitch_cmd = "descend"
+    def __create_contact_example_1(self, aircraft_name, airport_name, airport_entity, channel, reason, neg_parameter=None):
+        reason_cmd = f"for {reason} instructions"
 
-        x = f"{aircraft_name} hold position after departure {pitch_cmd} to altitude {altitude} feet"
+        x = f"{aircraft_name} contact {airport_name} {airport_entity} {channel} {reason_cmd}"
+
         if neg_parameter is None:
-            y = f"fly (0, {pitch}, {altitude}, 0)"
+            y = f"contact ({channel}, {reason})"
         else:
             y = f"{neg_parameter} value out of expected range"
         return f"{x} \t {y}"
@@ -91,18 +91,12 @@ class TrainingDataGenerator:
     # @airport_name - name of airport to contact
     # @airport_entity - name of entity at airport to contact
     # @channel - channel to contact airport_entity
-    # @reason - reason to contact airport_entity
     # @neg_parameter - if specified, indicates the parameter has a value out of expected range, generates a negative training example
-    def __create_contact_example_1(self, aircraft_name, airport_name, airport_entity, channel, reason, neg_parameter=None):
-        if reason is None:
-            reason_cmd = ""
-            reason = ""
-        else:
-            reason_cmd = f"for {reason} instructions"
+    def __create_contact_example_2(self, aircraft_name, airport_name, airport_entity, channel, neg_parameter=None):
+        x = f"{aircraft_name} contact {airport_name} {airport_entity} {channel}"
 
-        x = f"{aircraft_name} contact {airport_name} {airport_entity} {channel} {reason_cmd}"
         if neg_parameter is None:
-            y = f"contact ({channel}, {reason})"
+            y = f"contact ({channel}, none)"
         else:
             y = f"{neg_parameter} value out of expected range"
         return f"{x} \t {y}"
@@ -118,17 +112,33 @@ class TrainingDataGenerator:
     # @approval_status - either approved or not_approved
     # @neg_parameter - if specified, indicates the parameter has a value out of expected range, generates a negative training example
     def __create_contact_and_approval_example_1(self, aircraft_name, airport_name, airport_entity, channel, reason, action, approval_status, neg_parameter=None):
-        if reason is None:
-            reason_cmd = ""
-            reason = ""
-        else:
-            reason_cmd = f"for {reason} instructions"
+        reason_cmd = f"for {reason} instructions"
 
         x = f"{aircraft_name} {action} {approval_status} contact {airport_name} {airport_entity} {channel} {reason_cmd}"
         if neg_parameter is None:
-            y = f"{action.replace(' ', '_')} ({approval_status.replace(' ', '_')}) and contact ({channel}, {reason})"
+            y = f"{approval_status.replace(' ', '_')} ({action.replace(' ', '_')}) ; contact ({channel}, {reason})"
         else:
             y = f"{neg_parameter} value out of expected range"
+        return f"{x} \t {y}"
+
+    # Generate a training example for a contact command with an action approval/disapproval
+    #
+    # @aircraft_name - name of aircraft
+    # @airport_name - name of airport to contact
+    # @airport_entity - name of entity at airport to contact
+    # @channel - channel to contact airport_entity
+    # @reason - reason to contact airport_entity
+    # @action - action that has been approved/not_approved
+    # @approval_status - either approved or not_approved
+    # @neg_parameter - if specified, indicates the parameter has a value out of expected range, generates a negative training example
+    def __create_contact_and_approval_example_2(self, aircraft_name, airport_name, airport_entity, channel, action, approval_status, neg_parameter=None):
+        x = f"{aircraft_name} {action} {approval_status} contact {airport_name} {airport_entity} {channel}"
+
+        if neg_parameter is None:
+            y = f"{approval_status.replace(' ', '_')} ({action.replace(' ', '_')}) , contact ({channel}, none)"
+        else:
+            y = f"{neg_parameter} value out of expected range"
+
         return f"{x} \t {y}"
 
     # Generate training data for the fly command.
@@ -178,8 +188,6 @@ class TrainingDataGenerator:
                         parameter_values['destination'],
                         neg_parameter or None
                     ))
-            #elif j == 2:
-            #    training_examples.append(create_fly_training_example_3(f"{aircraft_name} {aircraft_number}", pitch, altitude))
 
         return training_examples
 
@@ -206,7 +214,7 @@ class TrainingDataGenerator:
                 neg_parameter = "channel"
                 parameter_values[neg_parameter] = self.__generate_parameter_value(neg_parameter, neg_example=True)
 
-            j = np.random.randint(0, 2)
+            j = np.random.randint(0, 4)
             if j == 0:
                 training_examples.append(
                     self.__create_contact_example_1(
@@ -217,7 +225,16 @@ class TrainingDataGenerator:
                         parameter_values['reason'],
                         neg_parameter or None
                     ))
-            else:
+            elif j==1:
+                training_examples.append(
+                    self.__create_contact_example_2(
+                        f"{parameter_values['aircraft_name']} {parameter_values['aircraft_number']}",
+                        parameter_values['airport_name'],
+                        parameter_values['airport_entity'],
+                        parameter_values['channel'],
+                        neg_parameter or None
+                    ))
+            elif j==2:
                 training_examples.append(
                     self.__create_contact_and_approval_example_1(
                         parameter_values['aircraft_name'],
@@ -229,7 +246,17 @@ class TrainingDataGenerator:
                         parameter_values['approval_status'],
                         neg_parameter or None
                     ))
-
+            elif j == 3:
+                training_examples.append(
+                    self.__create_contact_and_approval_example_2(
+                        parameter_values['aircraft_name'],
+                        parameter_values['airport_name'],
+                        parameter_values['airport_entity'],
+                        parameter_values['channel'],
+                        parameter_values['action'],
+                        parameter_values['approval_status'],
+                        neg_parameter or None
+                    ))
         return training_examples
 
     # Generate training data. Default behaviour is to output to a file, can return training data directly.
@@ -252,9 +279,9 @@ class TrainingDataGenerator:
 
         if to_file:
             if filename is None:
-                f = open(GENERATED_TRAINING_DATA_FILE_NAME, "a")
+                f = open(GENERATED_TRAINING_DATA_FILE_NAME, "w")
             else:
-                f = open(filename, "a")
+                f = open(filename, "w")
 
             for i in range(len(training_examples)):
                 f.write(f"{training_examples[i]}\n")
