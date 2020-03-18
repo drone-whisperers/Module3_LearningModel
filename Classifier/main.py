@@ -27,8 +27,9 @@ for cmd_class in cmd_examples.keys():
 
     cmd_class_test_results[cmd_class] = {'correct_translations':correct_translation, 'incorrect_translation':incorrect_translation, 'incorrect_translations':incorrect_translations}
 
-print(cmd_class_test_results)
-print("Hello World")
+print(f"Fly Commands: {cmd_class_test_results['fly']}")
+print(f"Contact Commands: {cmd_class_test_results['contact']}")
+
 
 
 
