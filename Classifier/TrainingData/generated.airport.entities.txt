@@ -1,0 +1,15 @@
+kennedy ground
+kennedy radar
+laguardia radar
+phoenix ground
+phoenix tower
+bush ground
+pearson radar
+phoenix radar
+bush radar
+bush tower
+laguardia ground
+laguardia tower
+pearson tower
+kennedy tower
+pearson ground
