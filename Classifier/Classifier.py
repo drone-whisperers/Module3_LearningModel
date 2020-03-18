@@ -11,31 +11,29 @@ import pickle
 USE_SEQUENTIAL_ENCODING = True
 EXCLUDE_NUMBERS = True
 
-# Gather training data
-TRAINING_DATA = "./TrainingData/generated.training.data.txt"
-LABEL_MATRIX_FILE = "./TrainingData/generated.label.matrix.csv"
-KNOWN_AIRCRAFT_NAME_FILE = "./TrainingData/generated.aircraft.names.txt"
-KNOWN_AIRPORT_ENTITY_FILE = "./TrainingData/generated.airport.entities.txt"
-KNOWN_LOCATIONS_FILE = "./TrainingData/generated.known.locations.txt"
-ENCODER_FILE = "./Model/encoder.pickle"
-SAVE_FILES = {
-    "fly": "./Model/fly.command.classifier.pickle",
-    "contact": "./Model/contact.command.classifier.pickle"
-}
 MY_PATH = os.path.abspath(os.path.dirname(__file__))
+TRAINING_DATA = os.path.join(MY_PATH, "TrainingData/generated.training.data.txt")
+LABEL_MATRIX_FILE = os.path.join(MY_PATH, "TrainingData/generated.label.matrix.csv")
+KNOWN_AIRCRAFT_NAME_FILE = os.path.join(MY_PATH, "TrainingData/generated.aircraft.names.txt")
+KNOWN_AIRPORT_ENTITY_FILE = os.path.join(MY_PATH, "TrainingData/generated.airport.entities.txt")
+KNOWN_LOCATIONS_FILE = os.path.join(MY_PATH, "TrainingData/generated.known.locations.txt")
+ENCODER_FILE = os.path.join(MY_PATH, "Model/encoder.pickle")
+SAVE_FILES = {
+    "fly": os.path.join(MY_PATH, "Model/fly.command.classifier.pickle"),
+    "contact": os.path.join(MY_PATH, "Model/contact.command.classifier.pickle")
+}
+
 
 class Classifier:
     _encoder = Encoder()
     _classifiers = {}
-    _init = False
     _label_matrix = None
     _data_set = None
     _exclude_sets = None
 
-    def init_classifier(self):
-
+    def __init__(self):
         # If any of the training data is missing then generate new training data
-        if not os.path.isfile(TRAINING_DATA) or \
+        if not os.path.isfile(os.path.join(MY_PATH,TRAINING_DATA)) or \
                 not os.path.isfile(LABEL_MATRIX_FILE) or \
                 not os.path.isfile(KNOWN_AIRCRAFT_NAME_FILE) or \
                 not os.path.isfile(KNOWN_AIRPORT_ENTITY_FILE) or \
@@ -71,7 +69,6 @@ class Classifier:
             else:
                 self.__train_classifier()
 
-        self._init = True
         return
 
     def __train_classifier(self):
@@ -106,18 +103,17 @@ class Classifier:
         return
 
 
-    def classify_sentence(self, sentence, print_translation=True):
+    def classify_command(self, command, print_translation=True):
         classifications = []
-        if not self._init:
-            self.init_classifier()
 
+        #Iterate through each of the trained classifier models and predict the classification of the command
         for classifier in self._classifiers.keys():
-            classification = self._classifiers[classifier].predict([self._encoder.create_feature_vector(sentence)])
+            classification = self._classifiers[classifier].predict([self._encoder.create_feature_vector(command)])
             if (classification[0] == 1):
                 classifications.append(classifier)
 
         if print_translation:
-            print('Input:', sentence)
+            print('Input:', command)
             print('Translation:', classifications)
 
         return classifications

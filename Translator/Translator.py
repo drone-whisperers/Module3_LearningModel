@@ -8,22 +8,24 @@ from keras.preprocessing.sequence import pad_sequences
 from TrainingDataGenerator import TrainingDataGenerator
 from keras.callbacks import ModelCheckpoint
 
+MY_PATH = os.path.abspath(os.path.dirname(__file__))
+GLOVE_FILE = os.path.join(MY_PATH, "TrainingData/glove.6B.100d.txt")
+TRAINING_DATA = os.path.join(MY_PATH, "TrainingData/generated.training.data.txt")
+ENCODER_MODEL_SAVE_FILE = os.path.join(MY_PATH, "Model/encoder.model")
+DECODER_MODEL_SAVE_FILE = os.path.join(MY_PATH, "Model/decoder.model")
+BEST_MODEL_WEIGHTS_FILE = os.path.join(MY_PATH, "Model/best.weights.val.acc.h5")
+
 BATCH_SIZE = 64
-EPOCHS = 15
+EPOCHS = 20
 LSTM_NODES =256
 MAX_SENTENCE_LENGTH = 50
 MAX_NUM_WORDS = 2000
 EMBEDDING_SIZE = 100
-DROPOUT = 0.2
+DROPOUT = 0.25
 NEGATIVE_EXAMPLE_PROPORTION=0.15
-GLOVE_FILE = "./TrainingData/glove.6B.100d.txt"
-TRAINING_DATA = "./TrainingData/generated.training.data.txt"
-ENCODER_MODEL_SAVE_FILE = "./Model/encoder.model"
-DECODER_MODEL_SAVE_FILE = "./Model/decoder.model"
-BEST_MODEL_WEIGHTS_FILE = "./Model/best.weights.val.acc.h5"
-MY_PATH = os.path.abspath(os.path.dirname(__file__))
 
-class Translater:
+
+class Translator:
     _init = False
     _max_input_len = 0
     _max_output_len = 0
@@ -37,37 +39,8 @@ class Translater:
     _word2idx_output = None
     _input_tokenizer = None
 
-    # Initialize Translater. Loads the already trained model and recreates the Translater's state using the trained data.
-    # Only useful if these are available in the expected locations.
-    def init_translater(self):
-        if os.path.isfile(ENCODER_MODEL_SAVE_FILE) and os.path.isfile(DECODER_MODEL_SAVE_FILE):
-            if not os.path.isfile(TRAINING_DATA):
-                training_data_generator = TrainingDataGenerator()
-                training_data_generator.generate(neg_prop=NEGATIVE_EXAMPLE_PROPORTION)
-
-            #Load state of Translater
-            input_sentences, output_sentences, output_sentences_inputs = self.__process_training_data()
-            encoder_input_sequences, self._word2idx_input, self._input_tokenizer = self.__tokenize_sentences(input_sentences, input_sentences, None)
-            decoder_output_sequences, self._word2idx_output, _ = self.__tokenize_sentences(output_sentences + output_sentences_inputs, output_sentences, '')
-            decoder_input_sequences, _, _ = self.__tokenize_sentences(output_sentences + output_sentences_inputs,output_sentences_inputs, '')
-
-            self._num_input_words = len(self._word2idx_input) + 1
-            self._num_output_words = len(self._word2idx_output) + 1
-            self._max_input_len = max(len(sen) for sen in encoder_input_sequences)
-            self._max_output_len = max(len(sen) for sen in decoder_output_sequences)
-
-            self._idx2word_input = {v: k for k, v in self._word2idx_input.items()}
-            self._idx2word_target = {v: k for k, v in self._word2idx_output.items()}
-
-            #Load encoder and decoder models
-            self._encoder_model = load_model(ENCODER_MODEL_SAVE_FILE, compile=False)
-            self._decoder_model = load_model(DECODER_MODEL_SAVE_FILE, compile=False)
-
-            self._init = True
-
-    # Default initialization method. Generates training data, if it is not in the expected location. Then creates a model
-    # and trains it. Saves model for future use.
-    def __init_translater(self):
+    def __init__(self):
+        #If training data does not exist, then generates it
         if not os.path.isfile(TRAINING_DATA):
             training_data_generator = TrainingDataGenerator()
             training_data_generator.generate(neg_prop=NEGATIVE_EXAMPLE_PROPORTION)
@@ -91,30 +64,34 @@ class Translater:
         self._max_output_len = max(len(sen) for sen in decoder_output_sequences)
         embedding_layer = Embedding(self._num_input_words, EMBEDDING_SIZE, weights=[input_embedding_matrix], input_length=self._max_input_len)
 
-        decoder_targets_one_hot = self.__create_output_model(padded_decoder_output_sequences)
-        encoder, encoder_outputs, encoder_states, encoder_inputs_placeholder = self.__define_encoder(embedding_layer)
-        decoder_lstm, decoder_outputs, decoder_embedding, decoder_inputs_placeholder = self.__define_decoder(encoder_states)
-        decoder_dense, decoder_outputs = self.__define_dense_layer(decoder_outputs)
+        #If the encoder and decoder models exist, then load it, otherwise train a new model
+        if os.path.isfile(ENCODER_MODEL_SAVE_FILE) and os.path.isfile(DECODER_MODEL_SAVE_FILE):
+            self._encoder_model = load_model(ENCODER_MODEL_SAVE_FILE, compile=False)
+            self._decoder_model = load_model(DECODER_MODEL_SAVE_FILE, compile=False)
+        else:
+            decoder_targets_one_hot = self.__create_output_model(padded_decoder_output_sequences)
+            encoder, encoder_outputs, encoder_states, encoder_inputs_placeholder = self.__define_encoder(embedding_layer)
+            decoder_lstm, decoder_outputs, decoder_embedding, decoder_inputs_placeholder = self.__define_decoder(encoder_states)
+            decoder_dense, decoder_outputs = self.__define_dense_layer(decoder_outputs)
 
-        training_model = self.__compile_and_fit_model(
-            encoder_inputs_placeholder,
-            decoder_inputs_placeholder,
-            decoder_outputs,
-            padded_encoder_input_sequences,
-            padded_decoder_input_sequences,
-            decoder_targets_one_hot
-        )
+            training_model = self.__compile_and_fit_model(
+                encoder_inputs_placeholder,
+                decoder_inputs_placeholder,
+                decoder_outputs,
+                padded_encoder_input_sequences,
+                padded_decoder_input_sequences,
+                decoder_targets_one_hot
+            )
 
-        self._encoder_model, self._decoder_model = self.__modify_model_for_predictions(encoder_inputs_placeholder, encoder_states, decoder_embedding, decoder_lstm, decoder_dense)
+            self._encoder_model, self._decoder_model = self.__modify_model_for_predictions(encoder_inputs_placeholder, encoder_states, decoder_embedding, decoder_lstm, decoder_dense)
 
-        self._encoder_model.save(ENCODER_MODEL_SAVE_FILE)
-        self._decoder_model.save(DECODER_MODEL_SAVE_FILE)
+            self._encoder_model.save(ENCODER_MODEL_SAVE_FILE)
+            self._decoder_model.save(DECODER_MODEL_SAVE_FILE)
 
         #todo: investigate what these contain, and then rename?
         self._idx2word_input = {v:k for k, v in self._word2idx_input.items()}
         self._idx2word_target = {v:k for k, v in self._word2idx_output.items()}
 
-        self._init = True
 
     # Initial processing for training data. Reads all training data and splits each example into 3 parts.
     #
@@ -370,16 +347,13 @@ class Translater:
     #
     # Return
     #   translated sentence
-    def translate_sentence(self, sentence, print_translation=True):
-        if not self._init:
-            self.__init_translater()
-
-        sequence = self._input_tokenizer.texts_to_sequences([sentence])
+    def translate_command(self, command, print_translation=True):
+        sequence = self._input_tokenizer.texts_to_sequences([command])
         padded_sequence = pad_sequences(sequence, maxlen=self._max_input_len, padding='pre')
 
         translation = self._translate_sequence(padded_sequence[0:0 + 1])
         if print_translation:
-            print('Input:', sentence)
+            print('Input:', command)
             print('Translation:', translation)
 
         return translation

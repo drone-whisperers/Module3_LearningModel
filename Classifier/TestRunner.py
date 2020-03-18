@@ -2,7 +2,6 @@ from Classifier import Classifier
 from TrainingDataGenerator import TrainingDataGenerator
 
 classifier = Classifier()
-classifier.init_classifier()
 
 training_data_generator = TrainingDataGenerator()
 fly_cmd_examples, contact_cmd_examples = training_data_generator.generate(to_file=False, num_fly_train_examples=500, num_contact_train_examples=500)
@@ -16,7 +15,7 @@ for cmd_class in cmd_examples.keys():
     examples = cmd_examples[cmd_class]
 
     for example in examples:
-        classification = classifier.classify_sentence(example, print_translation=False)
+        classification = classifier.classify_command(example, print_translation=False)
 
         if cmd_class in classification:
             correct_translation += 1
@@ -29,6 +28,7 @@ for cmd_class in cmd_examples.keys():
 print(f"Fly Commands: {cmd_class_test_results['fly']}")
 print(f"Contact Commands: {cmd_class_test_results['contact']}")
 
+print ("stop")
 
 
 

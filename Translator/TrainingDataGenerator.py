@@ -1,7 +1,9 @@
 import numpy as np
 import random
+import os.path
 
-GENERATED_TRAINING_DATA_FILE_NAME = "./TrainingData/generated.training.data.txt"
+MY_PATH = os.path.abspath(os.path.dirname(__file__))
+GENERATED_TRAINING_DATA_FILE_NAME = os.path.join(MY_PATH, "TrainingData/generated.training.data.txt")
 DEFAULT_FLY_TRAINING_EXAMPLES = 15000
 DEFAULT_CONTACT_TRAINING_EXAMPLES = 15000
 

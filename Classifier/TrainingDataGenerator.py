@@ -1,11 +1,13 @@
 import numpy as np
 import random
+import os.path
 
-GENERATED_TRAINING_DATA_FILE = "./TrainingData/generated.training.data.txt"
-GENERATED_LABEL_MATRIX_FILE = "./TrainingData/generated.label.matrix.csv"
-GENERATED_KNOWN_AIRCRAFT_NAME_FILE = "./TrainingData/generated.aircraft.names.txt"
-GENERATED_KNOWN_AIRPORT_ENTITY_FILE = "./TrainingData/generated.airport.entities.txt"
-GENERATED_KNOWN_LOCATIONS_FILE = "./TrainingData/generated.known.locations.txt"
+MY_PATH = os.path.abspath(os.path.dirname(__file__))
+GENERATED_TRAINING_DATA_FILE = os.path.join(MY_PATH, "TrainingData/generated.training.data.txt")
+GENERATED_LABEL_MATRIX_FILE = os.path.join(MY_PATH, "TrainingData/generated.label.matrix.csv")
+GENERATED_KNOWN_AIRCRAFT_NAME_FILE = os.path.join(MY_PATH, "TrainingData/generated.aircraft.names.txt")
+GENERATED_KNOWN_AIRPORT_ENTITY_FILE = os.path.join(MY_PATH, "TrainingData/generated.airport.entities.txt")
+GENERATED_KNOWN_LOCATIONS_FILE = os.path.join(MY_PATH, "TrainingData/generated.known.locations.txt")
 DEFAULT_FLY_TRAINING_EXAMPLES = 1000
 DEFAULT_CONTACT_TRAINING_EXAMPLES = 1000
 

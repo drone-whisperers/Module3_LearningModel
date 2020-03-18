@@ -1,8 +1,7 @@
-from Translater import Translater
+from Translator import Translator
 from TrainingDataGenerator import TrainingDataGenerator
 
-translater = Translater()
-translater.init_translater()
+translator = Translator()
 
 #Generate new data for testing
 trainingDataGenerator = TrainingDataGenerator()
@@ -18,7 +17,7 @@ for cmd_class in cmd_examples.keys():
     examples = cmd_examples[cmd_class]
     for example in examples:
         cmd, expected_translation = example.split("\t")
-        actual_translation = translater.translate_sentence(cmd, print_translation=False)
+        actual_translation = translator.translate_command(cmd, print_translation=False)
 
         #Caseless comparison and strip leading/trailing whitespace
         if actual_translation.lower().strip() == expected_translation.lower().strip():
@@ -31,6 +30,3 @@ for cmd_class in cmd_examples.keys():
 
 print(f"Fly Commands: {cmd_class_test_results['fly']}")
 print(f"Contact Commands: {cmd_class_test_results['contact']}")
-
-
-print ("Hello World")
