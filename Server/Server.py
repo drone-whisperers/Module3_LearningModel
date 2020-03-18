@@ -3,7 +3,7 @@ from Classifier import Classifier
 import socket
 
 PORT = 42069
-SERVER_NAME = "localhost"
+SERVER_NAME = ""
 
 
 class Server:
