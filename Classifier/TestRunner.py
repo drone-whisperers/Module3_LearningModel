@@ -18,7 +18,6 @@ for cmd_class in cmd_examples.keys():
     for example in examples:
         classification = classifier.classify_sentence(example, print_translation=False)
 
-        #Caseless comparison and strip leading/trailing whitespace
         if cmd_class in classification:
             correct_translation += 1
         else:
