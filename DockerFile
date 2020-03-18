@@ -12,6 +12,6 @@ COPY . .
 
 RUN mv glove.6B.100d.txt Translator/TrainingData
 
-WORKDIR /Server
+WORKDIR /Translator
 
-CMD ["python3", "run_server.py"]
+CMD ["python3", "TranslatorService.py"]
