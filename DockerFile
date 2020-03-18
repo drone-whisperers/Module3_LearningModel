@@ -4,8 +4,14 @@ RUN pip3 install tensorflow
 
 RUN pip3 install keras
 
+RUN wget http://nlp.stanford.edu/data/glove.6B.zip && \
+   unzip glove.6B.zip && \
+   rm glove.6B.zip 
+
 COPY . .
 
-WORKDIR Server/
+RUN mv glove.6B.100d.txt Translator/TrainingData
+
+WORKDIR /Server
 
 CMD ["python3", "run_server.py"]
