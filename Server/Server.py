@@ -2,8 +2,7 @@ from Translator import Translator
 from Classifier import Classifier
 import socket
 
-
-PORT = 16668
+PORT = 42069
 SERVER_NAME = "localhost"
 
 
@@ -11,7 +10,6 @@ class Server:
     _classifier = None
     _translator = None
     _socket = None
-
 
     def __init__(self):
         self._classifier = Classifier()
@@ -40,7 +38,7 @@ class Server:
                     print(f"received: {data}")
                     if data:
                         pred = self.interpret_command(data)
-                        print(f"response: {data}")
+                        print(f"response: {pred}")
                         connection.sendall(pred.encode())
                     else:
                         print(f"no more data from {client_address}")
@@ -54,11 +52,11 @@ class Server:
     def interpret_command(self, command):
         classifications = self._classifier.classify_command(command)
 
-        if len(classifications) == 0:
-            return_message = "command not recognized"
-        else:
-            translation = self._translator.translate_command(command)
-            return_message = translation
+        #if len(classifications) == 0:
+        #    return_message = "command not recognized"
+        #else:
+        translation = self._translator.translate_command(command)
+        return_message = translation
 
         return return_message
 

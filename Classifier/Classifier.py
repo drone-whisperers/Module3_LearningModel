@@ -22,7 +22,7 @@ SAVE_FILES = {
     "fly": os.path.join(MY_PATH, "Model/fly.command.classifier.pickle"),
     "contact": os.path.join(MY_PATH, "Model/contact.command.classifier.pickle")
 }
-
+NEGATIVE_EXAMPLE_PROPORTION = 0.0
 
 class Classifier:
     _encoder = Encoder()
@@ -39,7 +39,7 @@ class Classifier:
                 not os.path.isfile(KNOWN_AIRPORT_ENTITY_FILE) or \
                 not os.path.isfile(KNOWN_LOCATIONS_FILE):
             training_data_generator = TrainingDataGenerator()
-            training_data_generator.generate()
+            training_data_generator.generate(neg_prop=NEGATIVE_EXAMPLE_PROPORTION)
 
         #Load all training data
         self._data_set = open(os.path.join(MY_PATH, TRAINING_DATA), "r").read().splitlines()
@@ -108,9 +108,13 @@ class Classifier:
 
         #Iterate through each of the trained classifier models and predict the classification of the command
         for classifier in self._classifiers.keys():
-            classification = self._classifiers[classifier].predict([self._encoder.create_feature_vector(command)])
-            if (classification[0] == 1):
-                classifications.append(classifier)
+            feature_vector = self._encoder.create_feature_vector(command)
+
+            # Only classify if there is at least 1 word that is recognized in the feature_vector
+            if 1 in feature_vector:
+                classification = self._classifiers[classifier].predict([feature_vector])
+                if (classification[0] == 1):
+                    classifications.append(classifier)
 
         if print_translation:
             print('Input:', command)

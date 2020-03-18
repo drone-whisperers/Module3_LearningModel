@@ -6,6 +6,6 @@ RUN pip3 install keras
 
 COPY . .
 
-WORKDIR Translator/
+WORKDIR Server/
 
-CMD ["python3", "main.py"]
+CMD ["python3", "run_server.py"]

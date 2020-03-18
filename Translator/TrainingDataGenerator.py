@@ -4,15 +4,15 @@ import os.path
 
 MY_PATH = os.path.abspath(os.path.dirname(__file__))
 GENERATED_TRAINING_DATA_FILE_NAME = os.path.join(MY_PATH, "TrainingData/generated.training.data.txt")
-DEFAULT_FLY_TRAINING_EXAMPLES = 15000
-DEFAULT_CONTACT_TRAINING_EXAMPLES = 15000
+DEFAULT_FLY_TRAINING_EXAMPLES = 25000
+DEFAULT_CONTACT_TRAINING_EXAMPLES = 25000
 
-AIRCRAFT_NAMES = ["Big Jet", "Airbus", "Cessna", "Boeing", "Lockheed", "Supermarine Spitfire"]
-AIRPORT_NAMES = ["LaGuardia", "Kennedy", "Pearson", "Bush", "Phoenix"]
-AIRPORT_ENTITIES = ["Ground", "Tower", "Radar"]
+AIRCRAFT_NAMES = ["big jet", "airbus", "cessna", "boeing", "lockheed", "supermarine spitfire"]
+AIRPORT_NAMES = ["laguardia", "kennedy", "pearson", "bush", "phoenix"]
+AIRPORT_ENTITIES = ["ground", "tower", "radar"]
 CONTACT_REASONS = ["taxi", "further", "takeoff", "startup", "next", "landing", "navigation"]
-DESTINATIONS = ["BONNY", "CLYDE", "SUNNY", "CALI"]
-ACTIONS = ["take off", "start up", "taxi", "land", "ILS approach"]
+DESTINATIONS = ["bonny", "clyde", "sunny", "cali"]
+ACTIONS = ["take off", "start up", "taxi", "land", "ils approach"]
 PITCH = ["ascend", "descend"]
 APPROVAL_STATUSES = ["approved", "not approved"]
 FLIGHT_LEVEL_MIN = 25
@@ -26,8 +26,10 @@ CHANNEL_MAX = 137
 
 class TrainingDataGenerator:
 
-    # Generate a training example for a fly command to change heading, ascend/descend to a new flight level,
-    # and optionally imposes a speed restriction.
+    # Generate a training example for a fly command
+    #
+    # Ex. airbus 396 fly heading 68 ascend to flight level 44 speed 179 knots
+    #  or airbus 396 fly heading 68 ascend to flight level 44 no speed restrictions
     #
     # @aircraft_name - name of aircraft
     # @heading - heading to change to (1 - 359 degrees)
@@ -36,7 +38,7 @@ class TrainingDataGenerator:
     # @speed_restriction - specifies a speed restriction, if ommitted then no speed restriction
     # @neg_parameter - if specified, indicates the parameter has a value out of expected range, generates a negative training example
     def __create_fly_training_example_1(self, aircraft_name, heading, pitch, flight_level, speed_restriction, neg_parameter=None):
-        if speed_restriction == 0:
+        if speed_restriction == 0 and not neg_parameter == "speed_restriction":
             speed_cmd = "no speed restrictions"
         else:
             speed_cmd = f"speed {speed_restriction} knots"
@@ -49,8 +51,10 @@ class TrainingDataGenerator:
             y = f"{neg_parameter} value out of expected range"
         return f"{x} \t {y}"
 
-    # Generate a training example for a fly command to fly direct to a location, ascend/descend to a new flight level
+    # Generate a training example for a fly command
     #
+    # Ex. airbus 975 fly direct bonny climb to flight level 163
+
     # @aircraft_name - name of aircraft
     # @pitch - ascend/descend
     # @altitude - altitude to ascend/descend to
@@ -67,6 +71,117 @@ class TrainingDataGenerator:
         else:
             y = f"{neg_parameter} value out of expected range"
         return f"{x} \t {y}"
+
+    # Generate a training example for a fly command
+    #
+    # Ex. lockheed 975 fly heading 84
+    #
+    # @aircraft_name - name of aircraft
+    # @heading - heading to change to (1 - 359 degrees)
+    # @pitch - ascend/descend
+    # @flight_level - height to ascend/descend to (measured as a multiple of feet)
+    # @speed_restriction - specifies a speed restriction, if ommitted then no speed restriction
+    # @neg_parameter - if specified, indicates the parameter has a value out of expected range, generates a negative training example
+    def __create_fly_training_example_3(self, aircraft_name, heading, neg_parameter=None):
+        x = f"{aircraft_name} fly heading {heading}"
+
+        if neg_parameter is None:
+            y = f"fly ({heading}, 0, 0, 0)"
+        else:
+            y = f"{neg_parameter} value out of expected range"
+        return f"{x} \t {y}"
+
+    # Generate a training example for a fly command
+    #
+    # Ex. boeing 966 fly descend to flight level 49
+    #
+    # @aircraft_name - name of aircraft
+    # @heading - heading to change to (1 - 359 degrees)
+    # @pitch - ascend/descend
+    # @flight_level - height to ascend/descend to (measured as a multiple of feet)
+    # @speed_restriction - specifies a speed restriction, if ommitted then no speed restriction
+    # @neg_parameter - if specified, indicates the parameter has a value out of expected range, generates a negative training example
+    def __create_fly_training_example_4(self, aircraft_name, pitch, flight_level, neg_parameter=None):
+        x = f"{aircraft_name} fly {pitch} to flight level {flight_level}"
+
+        if neg_parameter is None:
+            y = f"fly (0, {pitch}, {flight_level}, 0)"
+        else:
+            y = f"{neg_parameter} value out of expected range"
+        return f"{x} \t {y}"
+
+    # Generate a training example for a fly command
+    #
+    # Ex. boeing 518 fly speed 48 knots
+    #
+    # @aircraft_name - name of aircraft
+    # @heading - heading to change to (1 - 359 degrees)
+    # @pitch - ascend/descend
+    # @flight_level - height to ascend/descend to (measured as a multiple of feet)
+    # @speed_restriction - specifies a speed restriction, if ommitted then no speed restriction
+    # @neg_parameter - if specified, indicates the parameter has a value out of expected range, generates a negative training example
+    def __create_fly_training_example_5(self, aircraft_name, speed_restriction, neg_parameter=None):
+        if speed_restriction == 0 and not neg_parameter == "speed_restriction":
+            speed_cmd = "no speed restrictions"
+        else:
+            speed_cmd = f"speed {speed_restriction} knots"
+
+        x = f"{aircraft_name} fly {speed_cmd}"
+
+        if neg_parameter is None:
+            y = f"fly (0, 0, 0, {speed_restriction})"
+        else:
+            y = f"{neg_parameter} value out of expected range"
+        return f"{x} \t {y}"
+
+    # Generate a training example for a fly command
+    #
+    # Ex. cessna 416 fly heading 519 speed 184 knots
+    #
+    # @aircraft_name - name of aircraft
+    # @heading - heading to change to (1 - 359 degrees)
+    # @pitch - ascend/descend
+    # @flight_level - height to ascend/descend to (measured as a multiple of feet)
+    # @speed_restriction - specifies a speed restriction, if ommitted then no speed restriction
+    # @neg_parameter - if specified, indicates the parameter has a value out of expected range, generates a negative training example
+    def __create_fly_training_example_6(self, aircraft_name, heading, speed_restriction, neg_parameter=None):
+        if speed_restriction == 0 and not neg_parameter == "speed_restriction":
+            speed_cmd = "no speed restrictions"
+        else:
+            speed_cmd = f"speed {speed_restriction} knots"
+
+        x = f"{aircraft_name} fly heading {heading} {speed_cmd}"
+
+        if neg_parameter is None:
+            y = f"fly ({heading}, 0, 0, {speed_restriction})"
+        else:
+            y = f"{neg_parameter} value out of expected range"
+        return f"{x} \t {y}"
+
+    # Generate a training example for a fly command
+    #
+    # Ex. boeing 203 fly ascend to flight level 197 speed 161 knots
+    #
+    # @aircraft_name - name of aircraft
+    # @heading - heading to change to (1 - 359 degrees)
+    # @pitch - ascend/descend
+    # @flight_level - height to ascend/descend to (measured as a multiple of feet)
+    # @speed_restriction - specifies a speed restriction, if ommitted then no speed restriction
+    # @neg_parameter - if specified, indicates the parameter has a value out of expected range, generates a negative training example
+    def __create_fly_training_example_7(self, aircraft_name, pitch, flight_level, speed_restriction, neg_parameter=None):
+        if speed_restriction == 0 and not neg_parameter == "speed_restriction":
+            speed_cmd = "no speed restrictions"
+        else:
+            speed_cmd = f"speed {speed_restriction} knots"
+
+        x = f"{aircraft_name} fly {pitch} to flight level {flight_level} {speed_cmd}"
+
+        if neg_parameter is None:
+            y = f"fly (0, {pitch}, {flight_level}, {speed_restriction})"
+        else:
+            y = f"{neg_parameter} value out of expected range"
+        return f"{x} \t {y}"
+
 
     # Generate a training example for a contact command with a  reason
     #
@@ -161,7 +276,7 @@ class TrainingDataGenerator:
             for parameter in parameters:
                 parameter_values[parameter] = self.__generate_parameter_value(parameter)
 
-            j = np.random.randint(0, 2)
+            j = np.random.randint(0, 7)
             if j == 0:
                 if i in neg_example_iteration_values:
                     ranged_parameters = ["heading", "flight_level", "speed_restriction"]
@@ -188,6 +303,67 @@ class TrainingDataGenerator:
                         parameter_values['pitch'],
                         parameter_values['flight_level'],
                         parameter_values['destination'],
+                        neg_parameter or None
+                    ))
+            elif j == 2:
+                if i in neg_example_iteration_values:
+                    neg_parameter = "heading"
+                    parameter_values[neg_parameter] = self.__generate_parameter_value(neg_parameter, neg_example=True)
+
+                training_examples.append(
+                    self.__create_fly_training_example_3(
+                        f"{parameter_values['aircraft_name']} {parameter_values['aircraft_number']}",
+                        parameter_values['heading'],
+                        neg_parameter or None
+                    ))
+            elif j==3:
+                if i in neg_example_iteration_values:
+                    neg_parameter = "flight_level"
+                    parameter_values[neg_parameter] = self.__generate_parameter_value(neg_parameter, neg_example=True)
+
+                training_examples.append(
+                    self.__create_fly_training_example_4(
+                        f"{parameter_values['aircraft_name']} {parameter_values['aircraft_number']}",
+                        parameter_values['pitch'],
+                        parameter_values['flight_level'],
+                        neg_parameter or None
+                    ))
+            elif j==4:
+                if i in neg_example_iteration_values:
+                    neg_parameter = "speed_restriction"
+                    parameter_values[neg_parameter] = self.__generate_parameter_value(neg_parameter, neg_example=True)
+
+                training_examples.append(
+                    self.__create_fly_training_example_5(
+                        f"{parameter_values['aircraft_name']} {parameter_values['aircraft_number']}",
+                        parameter_values['speed_restriction'],
+                        neg_parameter or None
+                    ))
+            elif j==5:
+                if i in neg_example_iteration_values:
+                    ranged_parameters = ["heading", "speed_restriction"]
+                    neg_parameter = np.random.choice(ranged_parameters)
+                    parameter_values[neg_parameter] = self.__generate_parameter_value(neg_parameter, neg_example=True)
+
+                training_examples.append(
+                    self.__create_fly_training_example_6(
+                        f"{parameter_values['aircraft_name']} {parameter_values['aircraft_number']}",
+                        parameter_values['heading'],
+                        parameter_values['speed_restriction'],
+                        neg_parameter or None
+                    ))
+            elif j==6:
+                if i in neg_example_iteration_values:
+                    ranged_parameters = ["flight_level", "speed_restriction"]
+                    neg_parameter = np.random.choice(ranged_parameters)
+                    parameter_values[neg_parameter] = self.__generate_parameter_value(neg_parameter, neg_example=True)
+
+                training_examples.append(
+                    self.__create_fly_training_example_7(
+                        f"{parameter_values['aircraft_name']} {parameter_values['aircraft_number']}",
+                        parameter_values['pitch'],
+                        parameter_values['flight_level'],
+                        parameter_values['speed_restriction'],
                         neg_parameter or None
                     ))
 
@@ -306,42 +482,42 @@ class TrainingDataGenerator:
             parameter = np.random.randint(0, 999)
         elif parameter_name == "heading":
             if not neg_example:
-                parameter = np.random.randint(0, 360)
+                parameter = np.random.randint(1, 360)
             else:
-                parameter = np.random.randint(359, 720)
+                parameter = np.random.randint(360, 720)
         elif parameter_name == "pitch":
             parameter = np.random.choice(PITCH)
         elif parameter_name == "flight_level":
             if not neg_example:
-                parameter = np.random.randint(FLIGHT_LEVEL_MIN, FLIGHT_LEVEL_MAX)
+                parameter = np.random.randint(FLIGHT_LEVEL_MIN, FLIGHT_LEVEL_MAX + 1)
             else:
                 if np.random.randint(0,2):
                     parameter = np.random.randint(0, FLIGHT_LEVEL_MIN)
                 else:
-                    parameter = np.random.randint(FLIGHT_LEVEL_MAX, 2 * FLIGHT_LEVEL_MAX)
+                    parameter = np.random.randint(FLIGHT_LEVEL_MAX + 1, 2 * FLIGHT_LEVEL_MAX)
         elif parameter_name == "speed_restriction":
             if not neg_example:
                 if (np.random.randint(0, 10)) == 0:
                     parameter = 0
                 else:
-                    parameter = np.random.randint(SPEED_RESTRICTION_MIN, SPEED_RESTRICTION_MAX)
+                    parameter = np.random.randint(SPEED_RESTRICTION_MIN, SPEED_RESTRICTION_MAX + 1)
             else:
                 if np.random.randint(0, 2):
                     parameter = np.random.randint(0, SPEED_RESTRICTION_MIN)
                 else:
-                    parameter = np.random.randint(SPEED_RESTRICTION_MAX, SPEED_RESTRICTION_MAX * 2)
+                    parameter = np.random.randint(SPEED_RESTRICTION_MAX + 1, SPEED_RESTRICTION_MAX * 2)
         elif parameter_name == "destination":
             parameter = np.random.choice(DESTINATIONS)
         elif parameter_name == "altitude":
             parameter = np.random.randint(ALTITUDE_MIN, ALTITUDE_MAX)
         elif parameter_name == 'channel':
             if not neg_example:
-                parameter = np.random.randint(CHANNEL_MIN, CHANNEL_MAX) + (0.025 * np.random.randint(0, 39))
+                parameter = np.random.randint(CHANNEL_MIN, CHANNEL_MAX + 1) + (0.025 * np.random.randint(0, 39))
             else:
                 if np.random.randint(0, 2):
                     parameter = np.random.randint(0, CHANNEL_MIN) + (0.025 * np.random.randint(0, 39))
                 else:
-                    parameter = np.random.randint(CHANNEL_MAX, 999) + (0.025 * np.random.randint(0, 39))
+                    parameter = np.random.randint(CHANNEL_MAX + 1, 999) + (0.025 * np.random.randint(0, 39))
         elif parameter_name == 'airport_name':
             parameter = np.random.choice(AIRPORT_NAMES)
         elif parameter_name == 'airport_entity':

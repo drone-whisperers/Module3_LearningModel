@@ -11,12 +11,12 @@ GENERATED_KNOWN_LOCATIONS_FILE = os.path.join(MY_PATH, "TrainingData/generated.k
 DEFAULT_FLY_TRAINING_EXAMPLES = 1000
 DEFAULT_CONTACT_TRAINING_EXAMPLES = 1000
 
-AIRCRAFT_NAMES = ["Big Jet", "Airbus", "Cessna", "Boeing", "Lockheed", "Supermarine Spitfire"]
-AIRPORT_NAMES = ["LaGuardia", "Kennedy", "Pearson", "Bush", "Phoenix"]
-AIRPORT_ENTITIES = ["Ground", "Tower", "Radar"]
+AIRCRAFT_NAMES = ["big jet", "airbus", "cessna", "boeing", "lockheed", "supermarine spitfire"]
+AIRPORT_NAMES = ["laguardia", "kennedy", "pearson", "bush", "phoenix"]
+AIRPORT_ENTITIES = ["ground", "tower", "radar"]
 CONTACT_REASONS = [None, "taxi", "further", "takeoff", "startup", "next", "landing", "navigation"]
-DESTINATIONS = ["BONNY", "CLYDE", "SUNNY", "CALI"]
-ACTIONS = ["take off", "start up", "taxi", "land", "ILS approach"]
+DESTINATIONS = ["bonny", "clyde", "sunny", "cali"]
+ACTIONS = ["take off", "start up", "taxi", "land", "ils approach"]
 PITCH = ["ascend", "descend"]
 APPROVAL_STATUSES = ["approved", "not approved"]
 FLIGHT_LEVEL_MIN = 25
@@ -32,11 +32,13 @@ class TrainingDataGenerator:
     def __create_fly_training_example_1(self, aircraft_name, heading, pitch, flight_level, speed_restriction):
         if speed_restriction == 0:
             speed_cmd = "no speed restrictions"
+        elif speed_restriction == "":
+            speed_cmd = ""
         else:
             speed_cmd = f"speed {speed_restriction} knots"
 
         x = f"{aircraft_name} fly heading {heading} {pitch} to flight level {flight_level} {speed_cmd}"
-        return f"{x}"
+        return f"{x}".strip()
 
     # Generate a training example for a fly command to hold current position, after departure ascend/descend to altitude
     #
@@ -47,15 +49,19 @@ class TrainingDataGenerator:
     def __create_fly_training_example_2(self, aircraft_name, pitch, flight_level, destination):
         if pitch == "ascend":
             pitch_cmd = "climb"
+        elif pitch == "":
+            pitch_cmd = ""
         else:
             pitch_cmd = "descend"
 
         x = f"{aircraft_name} fly direct {destination} {pitch_cmd} to flight level {flight_level}"
-        return f"{x}"
+        return f"{x}".strip()
 
 
     def __create_contact_example_1(self, aircraft_name, airport_entity, channel, reason):
         if reason is None:
+            reason_cmd = ""
+        elif reason == "":
             reason_cmd = ""
         else:
             reason_cmd = f"for {reason} instructions"
@@ -73,7 +79,7 @@ class TrainingDataGenerator:
     def __create_contact_example_2(self, aircraft_name, airport_entity, channel):
         x = f"{aircraft_name} contact {airport_entity} {channel}"
 
-        return f"{x}"
+        return f"{x}".strip()
 
     def __create_contact_and_approval_example_1(self, aircraft_name, airport_entity, channel, reason, action, approval_status):
         if reason is None:
@@ -97,7 +103,7 @@ class TrainingDataGenerator:
     def __create_contact_and_approval_example_2(self, aircraft_name, airport_entity, channel, action, approval_status):
         x = f"{aircraft_name} {action} {approval_status} contact {airport_entity} {channel}"
 
-        return f"{x}"
+        return f"{x}".strip()
 
     def __generate_fly_training_examples(self, count, neg_prop=0.0):
         training_examples = {}
@@ -121,14 +127,16 @@ class TrainingDataGenerator:
             for parameter in parameters:
                 parameter_values[parameter] = self.__generate_parameter_value(parameter)
 
+            #Drop random parameters, attempt to force classifier to distinguish between valid and invalid commands structures
+            if negative_example:
+                num_params_to_drop = np.random.randint(0, len(parameter_values) + 1)
+                for i in range(0, num_params_to_drop):
+                    param_to_remove = np.random.choice(list(parameter_values.keys()))
+                    parameter_values[param_to_remove] = ""
+
             #Randomly select a fly training example type
             j = np.random.randint(0, 2)
             if j == 0:
-                if negative_example:
-                    ranged_parameters = ["heading", "flight_level", "speed_restriction"]
-                    neg_parameter = np.random.choice(ranged_parameters)
-                    parameter_values[neg_parameter] = self.__generate_parameter_value(neg_parameter, neg_example=True)
-
                 training_example = self.__create_fly_training_example_1(
                     f'{parameter_values["aircraft_name"]} {parameter_values["aircraft_number"]}',
                     parameter_values["heading"],
@@ -136,10 +144,6 @@ class TrainingDataGenerator:
                     parameter_values["flight_level"],
                     parameter_values["speed_restriction"])
             elif j == 1:
-                if negative_example:
-                    neg_parameter = "flight_level"
-                    parameter_values[neg_parameter] = self.__generate_parameter_value(neg_parameter, neg_example=True)
-
                 training_example = self.__create_fly_training_example_2(
                         f'{parameter_values["aircraft_name"]} {parameter_values["aircraft_number"]}',
                         parameter_values["pitch"],
@@ -149,8 +153,6 @@ class TrainingDataGenerator:
             training_examples[training_example] = label
             aircraft_names.add(parameter_values["aircraft_name"])
             known_locations.add(parameter_values["destination"])
-            #elif j == 2:
-            #    training_examples.append(create_fly_training_example_3(f"{aircraft_name} {aircraft_number}", pitch, altitude))
 
         return training_examples, aircraft_names, known_locations
 

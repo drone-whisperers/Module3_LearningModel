@@ -13,7 +13,10 @@ GLOVE_FILE = os.path.join(MY_PATH, "TrainingData/glove.6B.100d.txt")
 TRAINING_DATA = os.path.join(MY_PATH, "TrainingData/generated.training.data.txt")
 ENCODER_MODEL_SAVE_FILE = os.path.join(MY_PATH, "Model/encoder.model")
 DECODER_MODEL_SAVE_FILE = os.path.join(MY_PATH, "Model/decoder.model")
-BEST_MODEL_WEIGHTS_FILE = os.path.join(MY_PATH, "Model/best.weights.val.acc.h5")
+BEST_MODEL_WEIGHTS_VAL_ACC_FILE = os.path.join(MY_PATH, "Model/best.weights.val.acc.h5")
+BEST_MODEL_WEIGHTS_VAL_LOSS_FILE = os.path.join(MY_PATH, "Model/best.weights.val.loss.h5")
+MODEL_WEIGHTS_FILE_TO_LOAD = BEST_MODEL_WEIGHTS_VAL_LOSS_FILE
+
 
 BATCH_SIZE = 64
 EPOCHS = 20
@@ -83,8 +86,10 @@ class Translator:
                 decoder_targets_one_hot
             )
 
-            self._encoder_model, self._decoder_model = self.__modify_model_for_predictions(encoder_inputs_placeholder, encoder_states, decoder_embedding, decoder_lstm, decoder_dense)
+            #Load model weights as defined MODEL_WEIGHTS_FILE_TO_LOAD
+            training_model.load_weights(MODEL_WEIGHTS_FILE_TO_LOAD)
 
+            self._encoder_model, self._decoder_model = self.__modify_model_for_predictions(encoder_inputs_placeholder, encoder_states, decoder_embedding, decoder_lstm, decoder_dense)
             self._encoder_model.save(ENCODER_MODEL_SAVE_FILE)
             self._decoder_model.save(DECODER_MODEL_SAVE_FILE)
 
@@ -274,17 +279,17 @@ class Translator:
             metrics=['accuracy']
         )
 
-        model_checkpoint_val_acc = ModelCheckpoint(BEST_MODEL_WEIGHTS_FILE, monitor='val_accuracy', verbose=1, save_best_only=True, mode='max')
+        model_checkpoint_val_acc = ModelCheckpoint(BEST_MODEL_WEIGHTS_VAL_ACC_FILE, monitor='val_accuracy', verbose=1, save_best_only=True, mode='max')
+        model_checkpoint_val_loss = ModelCheckpoint(BEST_MODEL_WEIGHTS_VAL_LOSS_FILE, monitor='val_loss', verbose=1, save_best_only=True, mode='min')
         r = model.fit(
             [encoder_input_sequences, decoder_input_sequences],
             decoder_targets_one_hot,
             batch_size=BATCH_SIZE,
             epochs=EPOCHS,
             validation_split=0.1,
-            callbacks=[model_checkpoint_val_acc]
+            callbacks=[model_checkpoint_val_acc, model_checkpoint_val_loss]
         )
 
-        model.load_weights(BEST_MODEL_WEIGHTS_FILE)
         return model
 
     # Modify model for predictions, since during actual prediction/translation the entire output is not known at the
@@ -357,6 +362,3 @@ class Translator:
             print('Translation:', translation)
 
         return translation
-
-
-

@@ -5,8 +5,8 @@ translator = Translator()
 
 #Generate new data for testing
 trainingDataGenerator = TrainingDataGenerator()
-fly_cmd_examples = trainingDataGenerator.generate(to_file=False, num_fly_train_examples=1000, num_contact_train_examples=0, neg_prop=0.1)
-contact_cmd_examples = trainingDataGenerator.generate(to_file=False, num_fly_train_examples=0, num_contact_train_examples=1000, neg_prop=0.1)
+fly_cmd_examples = trainingDataGenerator.generate(to_file=False, num_fly_train_examples=5000, num_contact_train_examples=0, neg_prop=0.1)
+contact_cmd_examples = trainingDataGenerator.generate(to_file=False, num_fly_train_examples=0, num_contact_train_examples=5000, neg_prop=0.1)
 cmd_examples = {'fly':fly_cmd_examples, 'contact':contact_cmd_examples}
 
 cmd_class_test_results = {}
