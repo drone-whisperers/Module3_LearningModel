@@ -358,7 +358,6 @@ class Translator:
 
         translation = self._translate_sequence(padded_sequence[0:0 + 1])
         if print_translation:
-            print('Input:', command)
-            print('Translation:', translation)
+            print('[Translator] Translation:', translation)
 
         return translation

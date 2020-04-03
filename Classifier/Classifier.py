@@ -117,7 +117,6 @@ class Classifier:
                     classifications.append(classifier)
 
         if print_translation:
-            print('Input:', command)
-            print('Translation:', classifications)
+            print('[Classifier] Classification:', classifications)
 
         return classifications

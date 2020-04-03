@@ -50,12 +50,12 @@ class Server:
         return
 
     def interpret_command(self, command):
-        classifications = self._classifier.classify_command(command)
+        #classifications = self._classifier.classify_command(command)
 
         #if len(classifications) == 0:
         #    return_message = "command not recognized"
         #else:
-        translation = self._translator.translate_command(command)
+        translation = self._translator.translate_command(command, False)
         return_message = translation
 
         return return_message
