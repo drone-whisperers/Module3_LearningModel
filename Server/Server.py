@@ -30,8 +30,6 @@ class Server:
             connection, client_address = self._socket.accept()
 
             try:
-                print(f"connection from {client_address}")
-
                 # Receive the data in small chunks and retransmit it
                 while True:
                     data = connection.recv(1024).decode()
