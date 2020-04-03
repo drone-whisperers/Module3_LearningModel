@@ -33,13 +33,12 @@ class Server:
                 # Receive the data in small chunks and retransmit it
                 while True:
                     data = connection.recv(1024).decode()
-                    print(f"received: {data}")
                     if data:
+                        print(f"received: {data}")
                         pred = self.interpret_command(data)
                         print(f"response: {pred}")
                         connection.sendall(pred.encode())
                     else:
-                        print(f"no more data from {client_address}")
                         break
 
             finally:
