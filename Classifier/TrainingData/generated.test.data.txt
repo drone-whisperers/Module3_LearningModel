@@ -1,0 +1,1000 @@
+airbus 488 fly heading 218 ascend to flight level 49 speed 223 knots
+cessna 945 fly direct clyde descend to flight level 120
+cessna 522 fly heading 207 ascend to flight level 31 speed 225 knots
+supermarine spitfire 811 fly heading 122 descend to flight level 164 speed 159 knots
+big jet 453 fly heading 235 ascend to flight level 28 speed 193 knots
+supermarine spitfire 929 fly direct sunny climb to flight level 192
+supermarine spitfire 722 fly direct clyde climb to flight level 139
+boeing 196 fly direct sunny descend to flight level 96
+supermarine spitfire 725 fly heading 286 descend to flight level 114 speed 212 knots
+supermarine spitfire 858 fly heading 326 ascend to flight level 148 speed 158 knots
+lockheed 260 fly heading 194 descend to flight level 63 speed 142 knots
+big jet 909 fly direct clyde descend to flight level 29
+cessna 967 fly heading 46 ascend to flight level 91 speed 222 knots
+boeing 630 fly heading 107 descend to flight level 194 no speed restrictions
+lockheed 618 fly heading 309 ascend to flight level 32 speed 143 knots
+boeing 786 fly heading 323 ascend to flight level 113 speed 236 knots
+boeing 137 fly direct bonny climb to flight level 39
+airbus 670 fly direct cali climb to flight level 27
+lockheed 172 fly heading 27 ascend to flight level 128 speed 217 knots
+airbus 982 fly direct sunny descend to flight level 147
+airbus 284 fly heading 203 ascend to flight level 44 speed 178 knots
+supermarine spitfire 636 fly heading 357 ascend to flight level 199 speed 191 knots
+big jet 560 fly direct bonny climb to flight level 195
+lockheed 912 fly heading 32 ascend to flight level 28 speed 151 knots
+cessna 585 fly direct sunny descend to flight level 142
+supermarine spitfire 253 fly heading 112 descend to flight level 152 speed 183 knots
+cessna 451 fly heading 272 descend to flight level 197 speed 216 knots
+boeing 497 fly direct bonny descend to flight level 130
+cessna 556 fly direct bonny descend to flight level 153
+big jet 996 fly direct sunny descend to flight level 100
+supermarine spitfire 167 fly heading 321 ascend to flight level 160 speed 176 knots
+boeing 353 fly heading 186 ascend to flight level 52 speed 130 knots
+boeing 99 fly heading 97 descend to flight level 116 no speed restrictions
+boeing 804 fly direct bonny climb to flight level 140
+boeing 984 fly direct bonny climb to flight level 154
+airbus 241 fly heading 324 descend to flight level 37 speed 125 knots
+cessna 573 fly direct sunny descend to flight level 48
+cessna 182 fly direct sunny descend to flight level 156
+cessna 651 fly heading 306 ascend to flight level 84 speed 113 knots
+cessna 433 fly heading 319 ascend to flight level 78 speed 179 knots
+cessna 113 fly direct cali descend to flight level 70
+airbus 424 fly heading 154 ascend to flight level 84 speed 221 knots
+big jet 577 fly heading 276 ascend to flight level 199 speed 176 knots
+big jet 455 fly heading 348 descend to flight level 165 speed 181 knots
+lockheed 547 fly heading 27 descend to flight level 164 speed 98 knots
+cessna 419 fly heading 92 descend to flight level 159 speed 134 knots
+cessna 325 fly heading 88 descend to flight level 177 speed 142 knots
+boeing 942 fly heading 49 descend to flight level 86 speed 197 knots
+supermarine spitfire 857 fly heading 194 descend to flight level 114 speed 184 knots
+lockheed 109 fly direct clyde descend to flight level 93
+cessna 691 fly direct cali descend to flight level 93
+airbus 514 fly heading 308 ascend to flight level 160 speed 185 knots
+airbus 492 fly heading 109 ascend to flight level 108 speed 96 knots
+lockheed 815 fly heading 281 ascend to flight level 78 speed 126 knots
+airbus 968 fly heading 167 descend to flight level 58 speed 144 knots
+supermarine spitfire 647 fly direct bonny descend to flight level 58
+cessna 456 fly heading 200 ascend to flight level 63 no speed restrictions
+boeing 700 fly direct bonny descend to flight level 123
+supermarine spitfire 822 fly heading 67 ascend to flight level 192 speed 157 knots
+lockheed 290 fly heading 318 ascend to flight level 35 speed 96 knots
+boeing 404 fly direct bonny climb to flight level 90
+lockheed 543 fly direct sunny descend to flight level 163
+cessna 868 fly heading 186 descend to flight level 66 speed 137 knots
+big jet 256 fly heading 272 ascend to flight level 119 speed 213 knots
+boeing 248 fly direct cali descend to flight level 43
+airbus 355 fly heading 108 descend to flight level 94 speed 156 knots
+airbus 217 fly direct clyde descend to flight level 141
+lockheed 762 fly heading 310 ascend to flight level 136 speed 225 knots
+big jet 478 fly heading 206 ascend to flight level 99 speed 186 knots
+cessna 221 fly direct cali climb to flight level 190
+cessna 964 fly heading 141 descend to flight level 135 speed 111 knots
+boeing 367 fly direct sunny climb to flight level 155
+boeing 412 fly heading 136 ascend to flight level 44 speed 194 knots
+airbus 479 fly heading 147 descend to flight level 43 speed 231 knots
+cessna 241 fly heading 92 ascend to flight level 77 speed 222 knots
+airbus 410 fly heading 240 descend to flight level 41 speed 110 knots
+boeing 849 fly heading 254 ascend to flight level 26 no speed restrictions
+lockheed 178 fly heading 230 ascend to flight level 144 speed 178 knots
+cessna 294 fly direct clyde descend to flight level 30
+big jet 742 fly direct sunny climb to flight level 67
+supermarine spitfire 551 fly direct sunny climb to flight level 191
+boeing 714 fly direct bonny climb to flight level 97
+big jet 977 fly heading 280 descend to flight level 92 speed 185 knots
+airbus 450 fly direct cali climb to flight level 119
+airbus 566 fly heading 174 descend to flight level 97 speed 170 knots
+lockheed 997 fly heading 27 ascend to flight level 57 speed 127 knots
+boeing 690 fly heading 306 ascend to flight level 94 speed 156 knots
+big jet 540 fly heading 349 ascend to flight level 112 speed 192 knots
+lockheed 449 fly heading 51 descend to flight level 25 speed 217 knots
+airbus 326 fly heading 158 ascend to flight level 108 speed 113 knots
+big jet 977 fly direct bonny climb to flight level 58
+boeing 671 fly heading 246 ascend to flight level 183 speed 225 knots
+cessna 58 fly heading 154 descend to flight level 77 speed 203 knots
+cessna 967 fly heading 213 ascend to flight level 139 speed 230 knots
+lockheed 777 fly heading 331 ascend to flight level 109 speed 163 knots
+airbus 662 fly direct clyde climb to flight level 177
+airbus 146 fly heading 239 ascend to flight level 77 speed 229 knots
+cessna 191 fly heading 314 descend to flight level 164 speed 137 knots
+lockheed 655 fly direct cali descend to flight level 181
+lockheed 81 fly heading 170 descend to flight level 129 speed 194 knots
+supermarine spitfire 960 fly heading 294 ascend to flight level 32 speed 108 knots
+supermarine spitfire 642 fly direct sunny climb to flight level 96
+airbus 853 fly heading 242 descend to flight level 132 speed 233 knots
+supermarine spitfire 347 fly heading 92 descend to flight level 104 speed 142 knots
+airbus 839 fly heading 346 ascend to flight level 155 speed 198 knots
+lockheed 797 fly heading 312 ascend to flight level 157 speed 118 knots
+lockheed 271 fly heading 253 ascend to flight level 106 speed 169 knots
+supermarine spitfire 405 fly direct bonny descend to flight level 31
+lockheed 461 fly heading 249 ascend to flight level 79 speed 213 knots
+airbus 262 fly heading 6 ascend to flight level 133 speed 97 knots
+big jet 265 fly direct cali climb to flight level 63
+cessna 237 fly direct sunny climb to flight level 103
+supermarine spitfire 649 fly direct cali descend to flight level 198
+airbus 463 fly direct bonny climb to flight level 189
+airbus 862 fly heading 61 descend to flight level 30 speed 237 knots
+supermarine spitfire 59 fly direct cali descend to flight level 75
+lockheed 927 fly heading 91 ascend to flight level 101 speed 210 knots
+big jet 100 fly heading 326 descend to flight level 197 speed 177 knots
+airbus 820 fly direct bonny descend to flight level 188
+lockheed 97 fly heading 227 ascend to flight level 173 speed 106 knots
+airbus 289 fly heading 267 descend to flight level 63 speed 216 knots
+supermarine spitfire 282 fly heading 327 ascend to flight level 74 speed 95 knots
+boeing 919 fly direct clyde descend to flight level 62
+supermarine spitfire 862 fly heading 45 ascend to flight level 98 speed 210 knots
+airbus 267 fly direct bonny descend to flight level 151
+supermarine spitfire 474 fly direct cali descend to flight level 98
+supermarine spitfire 62 fly heading 220 ascend to flight level 152 speed 107 knots
+big jet 943 fly heading 318 descend to flight level 71 speed 125 knots
+supermarine spitfire 252 fly direct cali descend to flight level 159
+big jet 96 fly heading 0 descend to flight level 145 speed 130 knots
+boeing 600 fly heading 284 ascend to flight level 198 speed 134 knots
+supermarine spitfire 487 fly direct cali descend to flight level 96
+cessna 163 fly heading 334 descend to flight level 117 speed 98 knots
+airbus 862 fly direct sunny descend to flight level 186
+boeing 181 fly heading 247 descend to flight level 185 speed 136 knots
+supermarine spitfire 443 fly direct bonny climb to flight level 150
+lockheed 211 fly heading 159 descend to flight level 46 speed 229 knots
+airbus 373 fly heading 108 descend to flight level 55 speed 177 knots
+big jet 265 fly direct bonny descend to flight level 107
+airbus 167 fly direct cali descend to flight level 73
+boeing 338 fly heading 57 descend to flight level 160 speed 100 knots
+cessna 301 fly direct sunny descend to flight level 46
+cessna 703 fly heading 197 ascend to flight level 80 speed 173 knots
+cessna 654 fly heading 349 ascend to flight level 73 speed 155 knots
+boeing 63 fly heading 228 descend to flight level 116 speed 182 knots
+supermarine spitfire 690 fly heading 78 ascend to flight level 69 speed 90 knots
+big jet 924 fly heading 252 descend to flight level 87 speed 183 knots
+airbus 239 fly heading 351 descend to flight level 92 speed 128 knots
+big jet 118 fly direct bonny climb to flight level 112
+big jet 566 fly direct bonny descend to flight level 148
+big jet 332 fly heading 357 ascend to flight level 118 speed 212 knots
+airbus 340 fly heading 23 descend to flight level 60 speed 108 knots
+big jet 385 fly direct cali descend to flight level 73
+cessna 869 fly heading 14 ascend to flight level 183 speed 146 knots
+cessna 994 fly direct bonny climb to flight level 122
+airbus 693 fly direct sunny climb to flight level 172
+lockheed 803 fly heading 328 ascend to flight level 51 speed 187 knots
+lockheed 52 fly heading 53 ascend to flight level 143 speed 220 knots
+supermarine spitfire 946 fly heading 32 ascend to flight level 125 speed 91 knots
+cessna 45 fly direct bonny descend to flight level 112
+airbus 724 fly heading 203 descend to flight level 59 speed 190 knots
+big jet 427 fly heading 2 descend to flight level 92 speed 201 knots
+cessna 249 fly heading 98 ascend to flight level 67 speed 200 knots
+supermarine spitfire 930 fly direct bonny climb to flight level 145
+lockheed 541 fly heading 151 descend to flight level 169 speed 187 knots
+cessna 47 fly direct cali climb to flight level 99
+airbus 29 fly direct sunny climb to flight level 80
+boeing 396 fly direct bonny descend to flight level 137
+lockheed 475 fly direct sunny descend to flight level 94
+boeing 6 fly direct cali climb to flight level 198
+airbus 582 fly direct bonny climb to flight level 83
+boeing 37 fly direct cali climb to flight level 186
+cessna 462 fly direct sunny descend to flight level 154
+boeing 550 fly direct sunny climb to flight level 164
+lockheed 250 fly heading 88 ascend to flight level 52 speed 109 knots
+big jet 500 fly heading 116 descend to flight level 163 speed 98 knots
+airbus 546 fly heading 279 ascend to flight level 78 no speed restrictions
+airbus 497 fly heading 76 ascend to flight level 196 speed 182 knots
+big jet 569 fly direct cali descend to flight level 124
+cessna 905 fly direct sunny descend to flight level 176
+boeing 356 fly direct clyde descend to flight level 177
+airbus 154 fly heading 308 ascend to flight level 113 speed 200 knots
+cessna 878 fly heading 274 ascend to flight level 30 speed 108 knots
+supermarine spitfire 486 fly direct sunny climb to flight level 148
+boeing 209 fly heading 66 descend to flight level 163 speed 112 knots
+lockheed 663 fly direct clyde descend to flight level 161
+lockheed 894 fly heading 12 ascend to flight level 36 speed 210 knots
+big jet 206 fly direct sunny climb to flight level 112
+big jet 980 fly heading 60 descend to flight level 71 speed 95 knots
+big jet 549 fly heading 187 descend to flight level 75 speed 238 knots
+cessna 193 fly direct cali climb to flight level 119
+big jet 250 fly heading 115 ascend to flight level 170 speed 112 knots
+boeing 916 fly direct sunny climb to flight level 104
+lockheed 401 fly direct bonny descend to flight level 165
+big jet 825 fly heading 201 descend to flight level 196 speed 180 knots
+big jet 152 fly direct sunny climb to flight level 149
+big jet 660 fly heading 320 ascend to flight level 65 speed 221 knots
+cessna 570 fly direct bonny climb to flight level 176
+boeing 447 fly heading 231 ascend to flight level 37 speed 159 knots
+big jet 663 fly direct bonny descend to flight level 152
+airbus 101 fly direct clyde climb to flight level 168
+airbus 535 fly direct sunny climb to flight level 100
+boeing 764 fly heading 215 ascend to flight level 55 speed 112 knots
+big jet 503 fly direct bonny climb to flight level 111
+supermarine spitfire 34 fly heading 284 descend to flight level 98 speed 162 knots
+big jet 22 fly heading 117 descend to flight level 148 no speed restrictions
+cessna 187 fly heading 13 ascend to flight level 198 speed 147 knots
+supermarine spitfire 901 fly direct sunny climb to flight level 151
+big jet 690 fly direct sunny climb to flight level 42
+supermarine spitfire 974 fly heading 50 ascend to flight level 62 speed 184 knots
+airbus 248 fly heading 114 descend to flight level 148 speed 136 knots
+boeing 777 fly direct bonny descend to flight level 132
+big jet 525 fly direct sunny climb to flight level 58
+lockheed 238 fly direct cali climb to flight level 38
+boeing 177 fly heading 313 descend to flight level 121 speed 236 knots
+cessna 618 fly direct bonny descend to flight level 137
+lockheed 809 fly heading 274 descend to flight level 82 speed 207 knots
+lockheed 937 fly heading 219 descend to flight level 52 speed 194 knots
+lockheed 651 fly heading 279 descend to flight level 168 speed 123 knots
+airbus 376 fly direct clyde climb to flight level 193
+supermarine spitfire 43 fly heading 288 ascend to flight level 93 speed 220 knots
+airbus 244 fly heading 184 descend to flight level 170 speed 126 knots
+lockheed 895 fly direct clyde descend to flight level 28
+cessna 855 fly direct cali climb to flight level 110
+big jet 388 fly direct cali climb to flight level 55
+supermarine spitfire 256 fly direct clyde climb to flight level 132
+lockheed 513 fly heading 170 ascend to flight level 77 speed 103 knots
+airbus 87 fly direct sunny descend to flight level 86
+big jet 555 fly direct sunny climb to flight level 65
+lockheed 113 fly heading 77 ascend to flight level 122 speed 128 knots
+supermarine spitfire 451 fly direct cali descend to flight level 75
+cessna 262 fly direct clyde climb to flight level 87
+supermarine spitfire 244 fly heading 302 descend to flight level 50 speed 225 knots
+supermarine spitfire 933 fly direct sunny climb to flight level 149
+airbus 763 fly direct clyde descend to flight level 144
+big jet 622 fly direct bonny descend to flight level 81
+airbus 820 fly direct sunny descend to flight level 80
+boeing 987 fly heading 330 ascend to flight level 87 speed 132 knots
+boeing 15 fly heading 198 ascend to flight level 69 no speed restrictions
+cessna 605 fly heading 301 descend to flight level 137 speed 147 knots
+boeing 543 fly heading 213 descend to flight level 150 speed 123 knots
+cessna 469 fly heading 263 ascend to flight level 192 speed 216 knots
+big jet 40 fly heading 115 ascend to flight level 168 speed 227 knots
+big jet 857 fly direct cali climb to flight level 168
+big jet 422 fly direct cali climb to flight level 40
+big jet 344 fly direct clyde descend to flight level 49
+airbus 351 fly direct sunny climb to flight level 111
+lockheed 898 fly direct clyde climb to flight level 79
+boeing 440 fly heading 29 ascend to flight level 130 speed 168 knots
+cessna 608 fly direct cali climb to flight level 150
+supermarine spitfire 819 fly heading 117 descend to flight level 37 speed 120 knots
+cessna 242 fly direct clyde climb to flight level 167
+boeing 304 fly heading 170 ascend to flight level 196 speed 226 knots
+cessna 721 fly direct clyde climb to flight level 117
+cessna 77 fly direct cali climb to flight level 29
+big jet 412 fly direct cali descend to flight level 121
+lockheed 264 fly heading 45 descend to flight level 124 speed 223 knots
+lockheed 104 fly heading 197 ascend to flight level 58 speed 126 knots
+cessna 589 fly direct cali climb to flight level 53
+lockheed 227 fly heading 179 ascend to flight level 76 speed 219 knots
+cessna 638 fly direct sunny descend to flight level 198
+lockheed 221 fly heading 7 descend to flight level 77 speed 118 knots
+lockheed 92 fly heading 279 descend to flight level 80 speed 123 knots
+cessna 17 fly direct sunny descend to flight level 134
+boeing 660 fly direct sunny climb to flight level 167
+boeing 33 fly heading 138 ascend to flight level 43 no speed restrictions
+supermarine spitfire 396 fly heading 184 ascend to flight level 151 speed 194 knots
+supermarine spitfire 399 fly heading 206 ascend to flight level 58 speed 192 knots
+airbus 332 fly heading 327 ascend to flight level 116 speed 103 knots
+boeing 709 fly heading 107 ascend to flight level 182 speed 152 knots
+lockheed 494 fly heading 227 ascend to flight level 43 speed 178 knots
+big jet 735 fly heading 237 ascend to flight level 176 speed 160 knots
+airbus 560 fly direct sunny descend to flight level 28
+airbus 691 fly heading 300 descend to flight level 179 speed 96 knots
+boeing 488 fly heading 325 descend to flight level 46 speed 131 knots
+airbus 508 fly heading 147 ascend to flight level 64 speed 158 knots
+airbus 163 fly heading 143 descend to flight level 183 speed 146 knots
+cessna 878 fly heading 226 ascend to flight level 156 speed 187 knots
+big jet 339 fly direct sunny descend to flight level 196
+airbus 833 fly direct clyde descend to flight level 66
+airbus 315 fly direct cali climb to flight level 164
+lockheed 913 fly direct bonny descend to flight level 143
+cessna 159 fly heading 10 ascend to flight level 171 speed 210 knots
+big jet 122 fly heading 332 descend to flight level 132 speed 90 knots
+supermarine spitfire 506 fly direct clyde climb to flight level 154
+airbus 697 fly direct clyde descend to flight level 137
+lockheed 35 fly heading 19 ascend to flight level 97 no speed restrictions
+big jet 878 fly direct bonny climb to flight level 189
+big jet 964 fly direct sunny climb to flight level 49
+boeing 276 fly direct clyde climb to flight level 69
+cessna 723 fly heading 1 ascend to flight level 107 speed 143 knots
+lockheed 480 fly direct cali descend to flight level 62
+cessna 363 fly heading 314 descend to flight level 119 speed 175 knots
+lockheed 427 fly direct clyde descend to flight level 102
+big jet 401 fly direct bonny descend to flight level 44
+airbus 540 fly heading 56 descend to flight level 198 speed 195 knots
+supermarine spitfire 703 fly direct clyde descend to flight level 155
+boeing 754 fly direct clyde descend to flight level 30
+airbus 331 fly heading 313 ascend to flight level 53 speed 176 knots
+boeing 697 fly heading 264 descend to flight level 26 speed 202 knots
+airbus 637 fly heading 320 ascend to flight level 31 speed 104 knots
+lockheed 679 fly heading 343 ascend to flight level 53 speed 229 knots
+cessna 349 fly direct clyde descend to flight level 25
+boeing 163 fly heading 155 descend to flight level 148 speed 90 knots
+lockheed 872 fly heading 139 ascend to flight level 192 no speed restrictions
+boeing 838 fly direct cali climb to flight level 139
+cessna 443 fly direct bonny descend to flight level 190
+big jet 47 fly heading 47 ascend to flight level 85 speed 124 knots
+airbus 698 fly heading 128 descend to flight level 107 speed 124 knots
+cessna 651 fly heading 338 descend to flight level 108 speed 162 knots
+boeing 389 fly heading 232 ascend to flight level 158 speed 236 knots
+big jet 726 fly direct bonny descend to flight level 45
+airbus 874 fly direct bonny descend to flight level 77
+airbus 758 fly heading 215 ascend to flight level 174 speed 136 knots
+cessna 432 fly heading 204 ascend to flight level 49 speed 112 knots
+airbus 197 fly direct clyde descend to flight level 134
+airbus 663 fly heading 220 ascend to flight level 110 speed 149 knots
+lockheed 828 fly direct cali descend to flight level 163
+cessna 188 fly heading 80 descend to flight level 58 speed 178 knots
+boeing 307 fly heading 354 ascend to flight level 118 speed 90 knots
+supermarine spitfire 954 fly heading 120 ascend to flight level 122 speed 234 knots
+airbus 51 fly heading 198 ascend to flight level 83 no speed restrictions
+supermarine spitfire 276 fly heading 186 descend to flight level 59 speed 94 knots
+supermarine spitfire 544 fly heading 240 ascend to flight level 104 speed 149 knots
+supermarine spitfire 905 fly direct sunny climb to flight level 84
+airbus 540 fly direct clyde descend to flight level 31
+lockheed 656 fly heading 149 ascend to flight level 87 speed 141 knots
+airbus 639 fly heading 6 descend to flight level 85 speed 139 knots
+airbus 621 fly heading 37 ascend to flight level 82 speed 201 knots
+supermarine spitfire 932 fly direct bonny descend to flight level 40
+cessna 422 fly direct cali descend to flight level 153
+boeing 266 fly heading 345 ascend to flight level 93 speed 219 knots
+cessna 458 fly heading 343 descend to flight level 51 speed 102 knots
+supermarine spitfire 398 fly direct sunny descend to flight level 49
+boeing 185 fly direct clyde climb to flight level 74
+airbus 676 fly heading 159 descend to flight level 162 speed 176 knots
+cessna 753 fly direct bonny descend to flight level 189
+boeing 931 fly heading 81 descend to flight level 90 speed 162 knots
+big jet 708 fly direct bonny climb to flight level 160
+big jet 490 fly direct cali climb to flight level 94
+lockheed 636 fly heading 40 ascend to flight level 158 speed 166 knots
+boeing 912 fly direct cali descend to flight level 84
+boeing 900 fly heading 32 descend to flight level 100 speed 90 knots
+big jet 802 fly heading 336 descend to flight level 165 speed 126 knots
+airbus 515 fly heading 292 descend to flight level 150 speed 200 knots
+boeing 863 fly heading 213 ascend to flight level 25 speed 210 knots
+cessna 43 fly direct bonny descend to flight level 196
+boeing 626 fly heading 24 descend to flight level 170 speed 201 knots
+boeing 530 fly heading 240 descend to flight level 72 speed 189 knots
+big jet 949 fly direct clyde climb to flight level 68
+airbus 413 fly direct clyde descend to flight level 152
+cessna 693 fly heading 349 descend to flight level 113 speed 232 knots
+cessna 172 fly direct cali descend to flight level 59
+airbus 383 fly direct cali climb to flight level 110
+supermarine spitfire 61 fly direct clyde climb to flight level 190
+big jet 700 fly direct bonny descend to flight level 137
+boeing 203 fly direct sunny descend to flight level 56
+airbus 397 fly heading 110 descend to flight level 154 speed 181 knots
+supermarine spitfire 507 fly heading 349 ascend to flight level 190 speed 93 knots
+big jet 285 fly direct clyde descend to flight level 38
+boeing 392 fly heading 14 ascend to flight level 122 speed 110 knots
+airbus 985 fly heading 137 ascend to flight level 197 speed 204 knots
+lockheed 663 fly heading 12 ascend to flight level 37 speed 107 knots
+airbus 116 fly heading 22 ascend to flight level 46 speed 98 knots
+big jet 846 fly direct cali climb to flight level 168
+airbus 470 fly heading 239 ascend to flight level 29 speed 135 knots
+lockheed 765 fly direct sunny descend to flight level 189
+big jet 3 fly heading 191 descend to flight level 115 speed 108 knots
+airbus 193 fly heading 76 descend to flight level 53 speed 190 knots
+airbus 539 fly heading 17 descend to flight level 185 no speed restrictions
+cessna 529 fly direct clyde climb to flight level 61
+cessna 438 fly direct clyde climb to flight level 138
+cessna 835 fly heading 213 ascend to flight level 108 speed 153 knots
+lockheed 116 fly direct sunny climb to flight level 39
+lockheed 140 fly heading 180 descend to flight level 63 speed 199 knots
+supermarine spitfire 388 fly heading 54 ascend to flight level 193 speed 156 knots
+boeing 285 fly direct clyde descend to flight level 45
+supermarine spitfire 861 fly direct sunny climb to flight level 47
+big jet 207 fly heading 125 ascend to flight level 113 speed 131 knots
+big jet 808 fly heading 258 descend to flight level 50 speed 134 knots
+big jet 764 fly direct bonny descend to flight level 63
+lockheed 926 fly direct cali descend to flight level 122
+big jet 448 fly heading 61 descend to flight level 74 speed 157 knots
+airbus 426 fly heading 134 descend to flight level 79 speed 104 knots
+supermarine spitfire 39 fly direct clyde descend to flight level 115
+lockheed 929 fly direct clyde descend to flight level 101
+cessna 547 fly direct sunny descend to flight level 158
+airbus 336 fly direct cali climb to flight level 97
+boeing 833 fly heading 15 descend to flight level 197 no speed restrictions
+airbus 456 fly heading 316 ascend to flight level 125 no speed restrictions
+big jet 64 fly direct cali descend to flight level 50
+airbus 930 fly direct sunny climb to flight level 146
+big jet 939 fly direct bonny descend to flight level 190
+lockheed 146 fly direct sunny descend to flight level 165
+boeing 546 fly direct bonny descend to flight level 55
+cessna 109 fly heading 59 ascend to flight level 173 speed 92 knots
+airbus 733 fly heading 230 descend to flight level 106 speed 168 knots
+airbus 750 fly heading 137 descend to flight level 75 speed 129 knots
+cessna 931 fly direct clyde climb to flight level 76
+big jet 767 fly direct clyde climb to flight level 138
+big jet 170 fly heading 69 descend to flight level 96 speed 128 knots
+lockheed 578 fly direct clyde descend to flight level 150
+boeing 479 fly direct cali descend to flight level 118
+boeing 62 fly direct clyde climb to flight level 114
+airbus 153 fly heading 265 descend to flight level 57 speed 185 knots
+boeing 482 fly direct sunny descend to flight level 191
+supermarine spitfire 531 fly heading 270 descend to flight level 64 no speed restrictions
+big jet 376 fly heading 215 ascend to flight level 144 speed 124 knots
+boeing 516 fly direct bonny climb to flight level 108
+supermarine spitfire 43 fly direct bonny climb to flight level 45
+supermarine spitfire 382 fly direct cali climb to flight level 169
+cessna 595 fly heading 236 ascend to flight level 106 speed 120 knots
+big jet 9 fly direct clyde climb to flight level 45
+lockheed 377 fly direct cali climb to flight level 114
+big jet 424 fly heading 34 descend to flight level 25 speed 90 knots
+boeing 527 fly direct sunny descend to flight level 179
+cessna 233 fly direct sunny descend to flight level 69
+boeing 790 fly heading 276 descend to flight level 29 speed 124 knots
+cessna 769 fly direct sunny climb to flight level 186
+airbus 382 fly direct clyde climb to flight level 61
+airbus 399 fly heading 326 descend to flight level 65 speed 208 knots
+lockheed 96 fly heading 283 ascend to flight level 189 speed 223 knots
+airbus 645 fly heading 119 ascend to flight level 127 speed 220 knots
+big jet 7 fly direct cali descend to flight level 167
+cessna 230 fly direct clyde descend to flight level 151
+boeing 452 fly heading 136 descend to flight level 170 speed 232 knots
+lockheed 328 fly direct sunny climb to flight level 166
+big jet 743 fly heading 23 descend to flight level 175 speed 99 knots
+supermarine spitfire 807 fly direct clyde climb to flight level 175
+supermarine spitfire 310 fly heading 308 ascend to flight level 184 speed 155 knots
+cessna 412 fly direct clyde descend to flight level 127
+lockheed 489 fly heading 158 ascend to flight level 77 speed 155 knots
+boeing 561 fly heading 242 ascend to flight level 76 speed 149 knots
+boeing 732 fly heading 64 descend to flight level 49 speed 109 knots
+lockheed 320 fly heading 240 descend to flight level 164 speed 239 knots
+supermarine spitfire 907 fly heading 149 ascend to flight level 115 speed 111 knots
+boeing 453 fly heading 263 descend to flight level 176 speed 106 knots
+supermarine spitfire 133 fly heading 310 descend to flight level 33 speed 199 knots
+supermarine spitfire 636 fly direct clyde climb to flight level 177
+airbus 445 fly direct cali climb to flight level 73
+cessna 505 fly direct clyde descend to flight level 52
+big jet 460 fly direct bonny climb to flight level 144
+boeing 931 fly direct sunny descend to flight level 120
+lockheed 68 fly heading 225 descend to flight level 55 speed 90 knots
+big jet 363 fly heading 54 descend to flight level 29 speed 232 knots
+boeing 190 fly heading 349 ascend to flight level 40 speed 154 knots
+big jet 893 fly direct cali climb to flight level 170
+cessna 589 fly heading 208 descend to flight level 84 speed 164 knots
+big jet 190 fly heading 355 descend to flight level 49 no speed restrictions
+cessna 913 fly direct cali climb to flight level 187
+supermarine spitfire 88 fly direct clyde climb to flight level 91
+cessna 955 fly direct sunny climb to flight level 131
+boeing 73 fly direct sunny descend to flight level 93
+supermarine spitfire 161 fly heading 131 ascend to flight level 144 speed 173 knots
+airbus 888 fly heading 172 ascend to flight level 41 speed 93 knots
+supermarine spitfire 675 fly heading 32 descend to flight level 164 speed 202 knots
+lockheed 184 fly heading 209 ascend to flight level 25 speed 211 knots
+airbus 153 fly heading 236 ascend to flight level 88 speed 210 knots
+cessna 379 fly heading 155 descend to flight level 51 speed 163 knots
+supermarine spitfire 29 fly heading 164 ascend to flight level 151 speed 192 knots
+supermarine spitfire 822 fly heading 138 descend to flight level 125 speed 191 knots
+airbus 73 fly heading 199 ascend to flight level 142 speed 123 knots
+lockheed 550 fly direct clyde climb to flight level 94
+big jet 871 fly direct bonny descend to flight level 152
+boeing 911 fly direct bonny descend to flight level 47
+big jet 528 fly heading 157 descend to flight level 27 no speed restrictions
+airbus 831 fly direct cali descend to flight level 58
+cessna 113 fly heading 209 ascend to flight level 173 no speed restrictions
+supermarine spitfire 345 fly heading 188 descend to flight level 197 speed 203 knots
+airbus 37 fly direct sunny descend to flight level 184
+supermarine spitfire 893 fly heading 27 ascend to flight level 126 speed 161 knots
+boeing 857 fly heading 280 ascend to flight level 104 speed 208 knots
+airbus 67 fly direct clyde descend to flight level 168
+airbus 388 fly heading 290 ascend to flight level 29 speed 171 knots
+supermarine spitfire 673 fly direct cali climb to flight level 178
+airbus 160 fly direct cali descend to flight level 124
+supermarine spitfire 599 fly heading 277 ascend to flight level 191 speed 133 knots
+airbus 559 fly heading 107 ascend to flight level 198 speed 102 knots
+big jet 140 fly heading 268 descend to flight level 65 speed 211 knots
+airbus 151 fly direct sunny descend to flight level 57
+big jet 39 fly direct clyde descend to flight level 164
+supermarine spitfire 666 fly heading 273 ascend to flight level 154 speed 142 knots
+boeing 208 fly heading 119 descend to flight level 189 speed 141 knots
+airbus 912 fly heading 35 descend to flight level 123 speed 174 knots
+cessna 908 fly direct clyde climb to flight level 41
+boeing 735 fly direct sunny descend to flight level 171
+boeing 110 fly direct bonny climb to flight level 112
+cessna 971 fly direct sunny descend to flight level 130
+lockheed 672 fly direct bonny climb to flight level 167
+supermarine spitfire 164 fly heading 219 descend to flight level 186 no speed restrictions
+cessna 788 fly direct cali climb to flight level 83
+supermarine spitfire 440 fly direct cali descend to flight level 163
+airbus 822 fly direct bonny descend to flight level 177
+airbus 398 fly heading 12 ascend to flight level 67 speed 137 knots
+boeing 599 fly heading 283 descend to flight level 106 speed 95 knots
+big jet 288 fly heading 44 ascend to flight level 103 speed 203 knots
+supermarine spitfire 677 fly direct sunny descend to flight level 199
+supermarine spitfire 21 fly heading 75 descend to flight level 45 speed 90 knots
+lockheed 163 fly direct bonny descend to flight level 165
+supermarine spitfire 145 fly direct clyde descend to flight level 189
+cessna 772 contact phoenix radar 129.925
+cessna 702 contact pearson tower 135.1
+airbus 180 contact kennedy tower 128.1 for landing instructions
+big jet 406 contact bush tower 122.375
+supermarine spitfire 865 contact bush radar 120.025
+boeing 106 start up approved contact laguardia ground 116.1
+supermarine spitfire 701 start up approved contact bush tower 120.025 for startup instructions
+cessna 868 contact laguardia tower 123.825
+lockheed 502 contact pearson radar 135.325
+lockheed 122 contact pearson tower 134.7 for startup instructions
+airbus 209 land approved contact pearson ground 121.575 for landing instructions
+boeing 166 contact pearson radar 121.175 for startup instructions
+boeing 4 contact phoenix radar 135.1 for takeoff instructions
+big jet 440 contact kennedy radar 116.425
+lockheed 908 contact bush tower 118.675
+cessna 981 start up not approved contact pearson radar 135.425 for further instructions
+cessna 373 contact laguardia radar 118.4
+supermarine spitfire 290 start up approved contact kennedy ground 123.15
+cessna 317 contact laguardia tower 128.125
+boeing 526 start up approved contact phoenix radar 130.2
+supermarine spitfire 57 contact bush radar 121.425 for takeoff instructions
+boeing 961 start up approved contact pearson tower 131.525
+big jet 600 ils approach approved contact laguardia tower 120.375
+supermarine spitfire 435 contact phoenix radar 123.85 for startup instructions
+lockheed 984 start up not approved contact phoenix ground 125.375
+boeing 556 start up not approved contact pearson ground 116.025
+supermarine spitfire 993 ils approach approved contact bush radar 123.55
+supermarine spitfire 900 land approved contact phoenix radar 118.6
+supermarine spitfire 613 contact laguardia radar 129.5
+airbus 787 start up not approved contact bush radar 130.3
+big jet 384 land not approved contact laguardia radar 121.5
+cessna 371 land not approved contact bush radar 119.275 for navigation instructions
+cessna 530 taxi not approved contact phoenix ground 131.175
+supermarine spitfire 885 start up not approved contact bush ground 134.3
+boeing 924 start up not approved contact kennedy tower 134.9
+cessna 863 contact phoenix radar 127.175 for takeoff instructions
+cessna 974 contact bush radar 131.125
+lockheed 539 taxi approved contact laguardia ground 136.15
+big jet 385 ils approach approved contact phoenix tower 136.825
+airbus 892 contact pearson tower 132.4 for next instructions
+airbus 543 start up not approved contact laguardia radar 130.7 for navigation instructions
+big jet 715 take off not approved contact bush tower 125.35 for takeoff instructions
+cessna 586 contact laguardia tower 116.675 for startup instructions
+supermarine spitfire 539 contact pearson radar 130.875 for landing instructions
+lockheed 325 land approved contact pearson radar 121.25 for further instructions
+lockheed 95 contact pearson radar 132.65
+cessna 218 contact bush tower 133.175
+supermarine spitfire 628 land not approved contact laguardia ground 126.2
+supermarine spitfire 467 contact laguardia radar 121.175 for takeoff instructions
+lockheed 752 contact pearson radar 125.675
+lockheed 614 start up approved contact pearson ground 122.125 for navigation instructions
+lockheed 906 land approved contact pearson radar 136.15
+big jet 451 take off approved contact bush ground 131.85
+big jet 208 contact pearson radar 131.025
+boeing 961 take off approved contact laguardia tower 128.925
+cessna 855 contact kennedy radar 134.225
+boeing 457 contact phoenix ground 122.0
+lockheed 501 contact laguardia radar 128.25 for further instructions
+airbus 58 contact phoenix radar 127.475 for taxi instructions
+lockheed 586 contact laguardia radar 132.075 for landing instructions
+big jet 252 ils approach not approved contact kennedy tower 117.575
+boeing 908 contact pearson radar 119.575
+airbus 942 ils approach approved contact laguardia radar 122.525
+lockheed 852 contact bush ground 131.5
+big jet 689 contact laguardia radar 127.625
+lockheed 888 taxi not approved contact laguardia radar 127.4 for takeoff instructions
+boeing 421 ils approach not approved contact phoenix ground 121.175
+airbus 835 contact bush radar 122.925 for further instructions
+big jet 543 contact laguardia ground 128.3
+boeing 603 contact kennedy radar 132.925 for further instructions
+cessna 360 contact phoenix radar 129.1 for startup instructions
+boeing 948 ils approach approved contact phoenix radar 116.55
+supermarine spitfire 696 start up not approved contact kennedy ground 116.725 for navigation instructions
+airbus 212 land not approved contact laguardia radar 133.05
+airbus 329 land approved contact pearson radar 130.125
+supermarine spitfire 76 land approved contact pearson tower 136.425
+boeing 682 start up approved contact bush tower 136.125
+lockheed 269 start up not approved contact bush ground 132.0 for landing instructions
+supermarine spitfire 57 land approved contact bush radar 134.0
+boeing 431 contact laguardia tower 131.275
+lockheed 687 contact bush ground 117.725 for startup instructions
+supermarine spitfire 120 contact laguardia ground 131.25 for next instructions
+lockheed 925 taxi approved contact phoenix ground 124.175
+supermarine spitfire 188 contact bush radar 125.125
+big jet 846 contact laguardia tower 135.2
+lockheed 396 take off approved contact pearson radar 121.075 for taxi instructions
+lockheed 685 contact phoenix tower 123.25
+boeing 197 taxi approved contact pearson tower 129.325 for navigation instructions
+cessna 751 take off not approved contact pearson ground 127.35
+airbus 430 contact laguardia tower 120.35 for landing instructions
+cessna 478 contact phoenix tower 123.5
+lockheed 645 contact bush radar 119.05 for landing instructions
+big jet 529 take off approved contact phoenix tower 131.35 for takeoff instructions
+cessna 29 contact pearson radar 135.025 for navigation instructions
+boeing 563 land not approved contact phoenix ground 116.75
+boeing 631 contact laguardia tower 132.725
+cessna 217 contact phoenix tower 135.45
+cessna 723 contact pearson ground 124.325
+supermarine spitfire 244 ils approach not approved contact laguardia radar 116.025 for startup instructions
+airbus 919 ils approach approved contact kennedy tower 122.8 for further instructions
+supermarine spitfire 741 contact pearson ground 130.85 for landing instructions
+cessna 663 ils approach approved contact laguardia tower 134.9 for taxi instructions
+big jet 284 contact bush tower 132.0 for landing instructions
+supermarine spitfire 406 start up not approved contact laguardia radar 129.3
+airbus 207 contact pearson tower 134.775 for startup instructions
+big jet 3 land not approved contact bush radar 121.475
+airbus 697 take off not approved contact phoenix tower 132.875 for takeoff instructions
+supermarine spitfire 545 contact kennedy ground 122.8 for startup instructions
+boeing 938 taxi approved contact bush tower 129.05
+cessna 84 start up approved contact kennedy tower 116.5
+big jet 717 contact kennedy radar 131.925 for navigation instructions
+lockheed 978 ils approach approved contact laguardia tower 136.85
+big jet 866 ils approach approved contact kennedy radar 122.525 for further instructions
+airbus 551 start up approved contact phoenix ground 120.575 for landing instructions
+boeing 253 contact laguardia ground 129.175
+boeing 684 contact phoenix radar 135.275
+boeing 197 taxi not approved contact kennedy ground 130.45 for navigation instructions
+cessna 75 taxi approved contact kennedy radar 124.025
+boeing 262 start up not approved contact pearson tower 131.875
+cessna 909 ils approach not approved contact laguardia tower 126.525
+airbus 588 contact phoenix ground 128.775
+supermarine spitfire 599 taxi approved contact phoenix tower 131.525
+big jet 56 contact phoenix radar 122.825
+airbus 392 contact bush tower 131.875
+lockheed 573 contact phoenix ground 135.8 for further instructions
+cessna 775 contact kennedy tower 118.35
+big jet 36 contact phoenix tower 130.825
+supermarine spitfire 108 taxi not approved contact kennedy ground 127.025
+lockheed 300 land not approved contact bush tower 125.425
+cessna 751 take off approved contact kennedy radar 118.25
+lockheed 603 take off not approved contact pearson ground 130.425 for landing instructions
+big jet 26 contact bush ground 134.575
+cessna 780 land not approved contact pearson ground 122.375
+airbus 499 start up not approved contact bush ground 122.7
+big jet 493 contact bush tower 122.85
+airbus 910 contact phoenix radar 121.825 for further instructions
+airbus 620 contact laguardia ground 135.35
+big jet 158 ils approach approved contact bush ground 119.475
+airbus 358 contact phoenix radar 130.625
+lockheed 605 land approved contact pearson ground 124.025
+airbus 695 contact phoenix ground 131.175
+boeing 245 start up approved contact kennedy radar 122.7 for landing instructions
+big jet 169 contact bush radar 125.25
+cessna 831 land approved contact kennedy ground 121.05
+boeing 496 contact pearson ground 121.7 for next instructions
+supermarine spitfire 774 start up not approved contact laguardia tower 131.8
+cessna 589 contact kennedy radar 117.575
+cessna 116 contact kennedy tower 126.85 for taxi instructions
+lockheed 652 start up not approved contact phoenix ground 134.125 for next instructions
+lockheed 773 contact laguardia ground 136.425 for takeoff instructions
+big jet 225 contact pearson ground 131.15 for navigation instructions
+cessna 78 take off approved contact phoenix radar 123.8 for landing instructions
+big jet 847 taxi not approved contact pearson tower 128.2 for further instructions
+airbus 813 contact bush ground 120.675 for startup instructions
+supermarine spitfire 625 start up approved contact laguardia tower 127.725
+boeing 495 taxi approved contact phoenix radar 125.925 for startup instructions
+supermarine spitfire 605 contact kennedy tower 133.825
+big jet 282 take off not approved contact pearson ground 119.425
+supermarine spitfire 56 start up not approved contact laguardia ground 132.525 for further instructions
+airbus 929 ils approach not approved contact pearson ground 128.05 for landing instructions
+boeing 395 ils approach not approved contact pearson radar 118.075
+supermarine spitfire 815 contact phoenix tower 135.65
+airbus 42 contact kennedy radar 123.475 for startup instructions
+cessna 651 contact laguardia tower 120.85 for further instructions
+lockheed 742 ils approach approved contact bush ground 127.25
+lockheed 161 contact laguardia tower 132.45
+airbus 629 contact bush radar 132.7
+big jet 589 start up not approved contact phoenix radar 129.5
+boeing 9 contact laguardia tower 122.5 for taxi instructions
+lockheed 434 contact phoenix ground 126.925 for startup instructions
+cessna 989 contact laguardia radar 130.625
+supermarine spitfire 224 contact kennedy ground 134.775
+boeing 29 take off approved contact phoenix ground 118.725
+supermarine spitfire 520 taxi approved contact pearson radar 121.15
+lockheed 535 take off approved contact kennedy tower 117.0
+airbus 163 take off not approved contact phoenix radar 118.8 for landing instructions
+big jet 561 contact kennedy radar 125.425
+cessna 53 contact kennedy radar 117.95 for takeoff instructions
+lockheed 382 contact bush ground 117.575 for further instructions
+big jet 124 contact laguardia radar 134.05
+lockheed 688 contact kennedy ground 127.825 for startup instructions
+supermarine spitfire 245 land not approved contact laguardia radar 118.7 for takeoff instructions
+airbus 601 take off not approved contact bush ground 125.925
+cessna 764 take off approved contact pearson tower 134.3 for taxi instructions
+supermarine spitfire 809 taxi approved contact laguardia ground 129.775 for startup instructions
+supermarine spitfire 359 contact laguardia radar 131.95
+supermarine spitfire 755 start up approved contact phoenix tower 126.325 for landing instructions
+airbus 984 contact laguardia radar 130.075
+boeing 673 ils approach not approved contact bush radar 133.55
+cessna 250 contact phoenix radar 136.05 for further instructions
+airbus 722 contact kennedy tower 120.75
+boeing 511 contact bush ground 127.575
+airbus 608 contact bush tower 135.625
+big jet 128 contact kennedy ground 131.5
+boeing 792 ils approach approved contact bush tower 123.15
+big jet 478 contact pearson tower 121.5
+big jet 150 ils approach not approved contact laguardia ground 134.7 for landing instructions
+cessna 182 contact phoenix radar 122.3
+cessna 868 contact phoenix ground 119.8
+boeing 590 contact bush tower 124.325
+airbus 50 land not approved contact bush tower 135.675
+big jet 369 take off approved contact phoenix ground 127.95
+big jet 441 contact pearson radar 123.5 for further instructions
+boeing 218 contact laguardia tower 132.15
+supermarine spitfire 530 contact laguardia tower 129.05
+airbus 759 take off approved contact phoenix radar 134.9 for navigation instructions
+cessna 858 ils approach not approved contact phoenix tower 116.175
+supermarine spitfire 576 land not approved contact phoenix ground 122.875
+lockheed 916 start up approved contact pearson tower 124.65
+airbus 861 contact bush radar 126.2
+lockheed 89 land approved contact pearson radar 122.5
+big jet 652 contact bush tower 128.625
+airbus 58 start up not approved contact kennedy tower 129.2 for landing instructions
+boeing 792 contact pearson tower 133.6 for next instructions
+boeing 696 contact kennedy ground 135.275
+supermarine spitfire 69 contact kennedy radar 130.5
+cessna 451 contact pearson radar 136.05 for further instructions
+big jet 430 start up not approved contact bush ground 134.125
+boeing 764 taxi approved contact phoenix ground 136.05
+cessna 452 start up not approved contact kennedy ground 117.425
+big jet 920 ils approach not approved contact bush tower 129.725
+big jet 9 land approved contact bush tower 134.05
+boeing 487 contact bush ground 125.275
+supermarine spitfire 686 contact pearson radar 122.05 for takeoff instructions
+airbus 316 ils approach approved contact pearson ground 136.35 for taxi instructions
+supermarine spitfire 636 contact pearson tower 118.25
+airbus 741 ils approach approved contact bush tower 129.825
+big jet 113 land approved contact phoenix ground 133.2
+boeing 565 ils approach approved contact laguardia radar 117.025 for taxi instructions
+big jet 444 land approved contact bush tower 116.825 for taxi instructions
+supermarine spitfire 614 take off approved contact pearson ground 121.4 for startup instructions
+cessna 870 contact pearson radar 135.4 for landing instructions
+lockheed 601 contact pearson ground 135.475
+cessna 419 contact pearson ground 122.5
+cessna 882 contact bush radar 120.85
+supermarine spitfire 133 contact pearson tower 129.45
+supermarine spitfire 141 taxi not approved contact laguardia tower 116.625
+lockheed 652 contact laguardia radar 132.1
+big jet 446 taxi approved contact pearson tower 126.45
+lockheed 353 contact pearson tower 121.575
+supermarine spitfire 320 ils approach approved contact kennedy tower 117.875
+supermarine spitfire 108 taxi not approved contact laguardia radar 121.825
+big jet 299 land approved contact phoenix ground 135.425
+boeing 403 ils approach approved contact kennedy radar 130.3
+airbus 680 contact pearson radar 125.15
+big jet 952 contact phoenix radar 123.3 for navigation instructions
+supermarine spitfire 103 contact phoenix ground 122.85 for taxi instructions
+boeing 487 take off not approved contact pearson ground 129.375 for taxi instructions
+cessna 11 contact pearson tower 118.675 for startup instructions
+airbus 281 take off not approved contact bush tower 120.5 for next instructions
+airbus 320 contact bush radar 122.05 for landing instructions
+supermarine spitfire 621 land not approved contact pearson ground 116.875
+lockheed 299 start up approved contact kennedy radar 119.15
+boeing 645 ils approach not approved contact phoenix tower 122.925 for taxi instructions
+supermarine spitfire 716 start up not approved contact laguardia radar 134.0
+boeing 826 contact pearson ground 125.275
+airbus 57 contact laguardia ground 127.1
+big jet 731 contact bush radar 135.075
+lockheed 408 contact pearson radar 123.575 for landing instructions
+cessna 600 ils approach not approved contact pearson tower 117.325
+supermarine spitfire 734 contact bush ground 132.85 for taxi instructions
+lockheed 556 ils approach not approved contact pearson radar 131.45 for takeoff instructions
+lockheed 835 contact phoenix radar 121.175
+big jet 343 contact kennedy radar 121.95
+lockheed 941 take off not approved contact pearson ground 136.375
+supermarine spitfire 739 take off not approved contact kennedy ground 118.35 for next instructions
+big jet 561 start up approved contact laguardia ground 123.2
+lockheed 796 ils approach approved contact kennedy radar 121.05
+cessna 189 contact phoenix tower 120.15
+supermarine spitfire 401 start up approved contact pearson tower 121.125
+boeing 556 contact phoenix radar 117.625 for navigation instructions
+boeing 968 start up approved contact bush radar 127.85 for takeoff instructions
+lockheed 857 contact phoenix radar 120.75
+boeing 924 ils approach approved contact laguardia tower 126.9 for takeoff instructions
+airbus 385 contact phoenix ground 118.4
+supermarine spitfire 123 taxi not approved contact laguardia ground 128.175 for taxi instructions
+big jet 400 start up approved contact kennedy radar 134.8
+supermarine spitfire 719 contact laguardia tower 129.6
+supermarine spitfire 341 contact bush ground 132.075
+boeing 638 contact phoenix ground 119.95
+supermarine spitfire 869 ils approach approved contact laguardia ground 129.35
+boeing 361 contact pearson ground 125.475
+lockheed 885 take off not approved contact bush radar 124.775 for startup instructions
+cessna 252 contact pearson ground 128.4 for startup instructions
+supermarine spitfire 598 contact phoenix radar 122.225 for startup instructions
+boeing 202 land approved contact pearson radar 121.725
+big jet 208 take off not approved contact bush radar 116.675 for startup instructions
+boeing 755 start up not approved contact bush ground 123.125 for landing instructions
+boeing 143 contact phoenix ground 132.325
+big jet 92 contact kennedy radar 136.8 for further instructions
+supermarine spitfire 885 take off not approved contact kennedy radar 122.1 for startup instructions
+boeing 414 taxi not approved contact phoenix radar 125.0
+boeing 506 contact kennedy tower 128.0
+airbus 323 contact pearson radar 131.175
+lockheed 335 taxi approved contact phoenix ground 118.85
+lockheed 389 contact pearson tower 120.75 for taxi instructions
+boeing 428 contact bush radar 120.175
+lockheed 338 contact phoenix tower 125.325
+boeing 297 ils approach not approved contact pearson ground 129.85
+big jet 918 contact laguardia tower 118.05 for startup instructions
+cessna 205 ils approach approved contact bush radar 127.875
+big jet 395 contact pearson tower 124.9 for takeoff instructions
+boeing 902 ils approach not approved contact bush ground 124.425
+supermarine spitfire 191 taxi not approved contact pearson tower 124.05
+cessna 540 ils approach not approved contact kennedy radar 122.55
+lockheed 58 take off not approved contact phoenix ground 135.125 for further instructions
+supermarine spitfire 623 contact kennedy radar 129.675 for taxi instructions
+airbus 814 taxi approved contact pearson ground 132.825 for next instructions
+supermarine spitfire 660 contact bush radar 121.6 for navigation instructions
+big jet 258 land not approved contact bush ground 130.6
+boeing 630 contact pearson radar 132.05
+boeing 622 contact pearson tower 128.45
+big jet 749 ils approach not approved contact laguardia tower 129.0
+airbus 920 contact laguardia tower 118.5 for takeoff instructions
+airbus 982 contact laguardia ground 135.525
+big jet 790 contact kennedy tower 136.75 for next instructions
+lockheed 331 ils approach approved contact kennedy ground 120.125 for navigation instructions
+supermarine spitfire 981 contact pearson tower 126.85
+lockheed 813 contact laguardia tower 124.075 for next instructions
+cessna 243 land approved contact pearson tower 116.25 for takeoff instructions
+big jet 813 contact pearson ground 122.85
+cessna 369 ils approach approved contact kennedy radar 126.6 for taxi instructions
+airbus 239 contact phoenix ground 117.0
+big jet 848 take off approved contact laguardia ground 118.1 for further instructions
+big jet 768 take off not approved contact kennedy tower 136.15
+lockheed 162 ils approach not approved contact phoenix radar 119.75 for next instructions
+supermarine spitfire 845 contact phoenix tower 125.425 for takeoff instructions
+boeing 318 contact phoenix tower 116.0 for further instructions
+big jet 373 taxi not approved contact kennedy radar 132.3
+supermarine spitfire 658 contact pearson tower 128.5 for startup instructions
+big jet 230 start up approved contact bush radar 128.6
+cessna 389 contact phoenix radar 130.65
+big jet 989 contact laguardia radar 129.175
+supermarine spitfire 881 take off not approved contact kennedy ground 131.6
+cessna 523 start up approved contact kennedy ground 124.725 for further instructions
+airbus 655 contact phoenix ground 126.95
+airbus 872 ils approach not approved contact bush radar 120.8 for next instructions
+cessna 876 taxi not approved contact laguardia ground 125.6 for navigation instructions
+lockheed 951 contact laguardia tower 125.125
+big jet 552 contact bush ground 121.5 for startup instructions
+big jet 881 start up not approved contact pearson tower 119.35
+boeing 938 take off approved contact laguardia ground 129.525 for takeoff instructions
+big jet 440 taxi not approved contact laguardia ground 136.3 for takeoff instructions
+supermarine spitfire 406 take off not approved contact laguardia tower 130.175
+big jet 170 taxi approved contact pearson ground 124.225 for next instructions
+cessna 544 taxi approved contact laguardia tower 133.825
+big jet 74 land approved contact bush tower 121.825 for takeoff instructions
+lockheed 855 start up approved contact bush ground 132.45
+airbus 38 taxi not approved contact pearson radar 130.375
+supermarine spitfire 835 contact kennedy ground 135.5 for navigation instructions
+big jet 425 ils approach not approved contact pearson tower 118.15
+big jet 165 contact pearson radar 119.475 for further instructions
+airbus 867 take off not approved contact bush radar 124.725
+boeing 796 taxi not approved contact kennedy ground 116.55
+lockheed 234 start up approved contact laguardia tower 122.675
+lockheed 368 take off approved contact bush tower 124.55
+lockheed 806 contact laguardia radar 116.275
+cessna 993 ils approach not approved contact pearson ground 131.025
+boeing 484 contact kennedy radar 124.725
+cessna 466 contact kennedy tower 130.725
+cessna 379 contact laguardia radar 121.8 for taxi instructions
+cessna 95 take off approved contact phoenix ground 116.9
+lockheed 13 contact kennedy tower 120.75
+boeing 545 contact pearson radar 126.475 for taxi instructions
+boeing 681 ils approach approved contact laguardia radar 118.65 for landing instructions
+supermarine spitfire 34 contact bush ground 121.925 for takeoff instructions
+supermarine spitfire 448 contact phoenix radar 122.75 for takeoff instructions
+lockheed 531 taxi approved contact laguardia ground 129.55 for taxi instructions
+supermarine spitfire 635 ils approach not approved contact kennedy radar 124.725 for takeoff instructions
+big jet 906 contact bush radar 128.15
+big jet 764 ils approach approved contact bush ground 123.225
+airbus 605 contact bush radar 127.4 for next instructions
+supermarine spitfire 322 start up not approved contact kennedy radar 117.375
+lockheed 782 contact bush ground 121.325
+cessna 616 contact kennedy tower 125.675 for taxi instructions
+big jet 680 contact kennedy ground 118.5 for further instructions
+lockheed 347 land not approved contact kennedy tower 135.55 for navigation instructions
+big jet 458 taxi not approved contact laguardia radar 133.825 for takeoff instructions
+lockheed 60 start up not approved contact bush tower 134.8 for landing instructions
+airbus 59 ils approach not approved contact phoenix radar 134.8 for takeoff instructions
+cessna 669 contact phoenix ground 121.75 for taxi instructions
+cessna 708 contact phoenix tower 133.175 for taxi instructions
+cessna 866 land approved contact bush ground 126.3
+boeing 824 contact laguardia radar 116.625
+cessna 464 take off not approved contact pearson radar 119.8 for startup instructions
+boeing 447 contact bush radar 117.725
+lockheed 144 contact phoenix tower 125.525 for next instructions
+boeing 383 take off not approved contact laguardia radar 127.325
+big jet 179 contact phoenix ground 131.1
+airbus 84 contact kennedy radar 123.475 for takeoff instructions
+lockheed 111 take off approved contact phoenix tower 125.675 for landing instructions
+boeing 919 start up not approved contact kennedy tower 129.575
+boeing 652 start up not approved contact bush radar 119.025 for taxi instructions
+cessna 936 taxi approved contact phoenix tower 135.525
+lockheed 62 contact phoenix tower 132.825 for navigation instructions
+airbus 275 contact laguardia ground 120.85
+cessna 427 taxi approved contact phoenix radar 121.9
+cessna 440 land not approved contact kennedy tower 128.725 for next instructions
+cessna 585 land not approved contact bush ground 126.775
+lockheed 577 contact pearson radar 130.225
+boeing 503 taxi approved contact bush ground 116.875
+airbus 480 contact phoenix tower 123.95
+boeing 87 ils approach approved contact laguardia tower 128.3 for takeoff instructions
+cessna 670 contact bush ground 122.3
+airbus 306 contact laguardia radar 133.4
+big jet 883 contact phoenix tower 130.75
+lockheed 624 contact pearson ground 131.725 for takeoff instructions
+boeing 236 ils approach not approved contact laguardia ground 118.85
+cessna 950 take off approved contact pearson tower 127.325
+lockheed 963 ils approach not approved contact pearson ground 116.825
+cessna 626 contact kennedy ground 127.775
+airbus 480 ils approach not approved contact kennedy radar 127.7 for taxi instructions
+airbus 945 contact phoenix tower 126.775 for takeoff instructions
+boeing 864 ils approach not approved contact kennedy radar 123.0 for next instructions
+big jet 879 taxi not approved contact bush ground 116.125
+cessna 562 contact laguardia tower 126.6 for taxi instructions
+airbus 772 contact bush radar 124.425
+supermarine spitfire 779 contact kennedy tower 118.225
+boeing 469 taxi not approved contact laguardia tower 126.7 for takeoff instructions
+lockheed 362 taxi not approved contact laguardia radar 123.15
+cessna 197 contact kennedy tower 116.675
+big jet 919 contact phoenix ground 122.325
+cessna 474 contact bush tower 118.05
+cessna 624 contact bush ground 133.925
+lockheed 421 contact bush radar 132.525
+airbus 950 contact phoenix radar 121.25 for taxi instructions
+big jet 190 taxi approved contact phoenix tower 131.375
+cessna 42 contact pearson radar 131.675 for navigation instructions
+big jet 843 land approved contact pearson tower 135.4 for navigation instructions
+cessna 722 taxi not approved contact phoenix tower 130.75
+big jet 40 ils approach not approved contact laguardia ground 116.125 for landing instructions
+boeing 329 contact pearson tower 130.925
+cessna 630 contact laguardia ground 133.875 for taxi instructions
+airbus 595 ils approach approved contact bush tower 131.25
+boeing 442 contact kennedy tower 136.125
+airbus 66 take off not approved contact laguardia ground 121.625
+boeing 457 contact phoenix radar 116.0
+cessna 279 land not approved contact pearson ground 116.275
+airbus 80 taxi approved contact kennedy ground 126.85 for taxi instructions
+airbus 808 contact bush tower 134.125
+lockheed 911 land not approved contact phoenix ground 118.375 for taxi instructions
+big jet 506 taxi not approved contact phoenix radar 127.925
+lockheed 242 land approved contact kennedy tower 129.775
+supermarine spitfire 562 taxi approved contact kennedy tower 128.275 for takeoff instructions
+big jet 277 contact kennedy ground 116.725 for landing instructions
+supermarine spitfire 941 start up not approved contact laguardia tower 128.125 for taxi instructions
+supermarine spitfire 746 contact laguardia tower 133.525 for landing instructions
+airbus 806 take off not approved contact phoenix ground 120.525
+cessna 820 contact phoenix ground 118.375
+boeing 364 taxi not approved contact pearson tower 118.4 for taxi instructions
+big jet 241 taxi approved contact pearson tower 135.825 for next instructions
+lockheed 709 start up approved contact bush ground 130.625
+boeing 77 contact bush ground 131.5
+supermarine spitfire 874 start up approved contact phoenix tower 135.675
+supermarine spitfire 29 ils approach not approved contact kennedy tower 120.9 for landing instructions
+cessna 571 ils approach not approved contact bush tower 124.275 for startup instructions
+boeing 675 contact pearson radar 116.9
+lockheed 337 contact bush radar 136.375
+lockheed 239 start up not approved contact kennedy radar 128.05
+boeing 975 contact pearson tower 136.65
+lockheed 13 contact laguardia tower 135.475
+airbus 740 contact phoenix ground 131.825
+airbus 340 land approved contact laguardia tower 117.7
+airbus 794 contact phoenix ground 126.0 for taxi instructions
+cessna 340 start up not approved contact bush radar 132.275 for landing instructions
+airbus 845 land approved contact laguardia tower 119.65 for further instructions
+boeing 174 contact phoenix radar 124.8 for startup instructions
+airbus 891 ils approach not approved contact phoenix ground 131.625 for landing instructions
+cessna 136 contact laguardia tower 120.275
+lockheed 685 start up approved contact kennedy tower 126.1 for landing instructions
+airbus 604 land approved contact phoenix radar 128.85
+airbus 537 contact kennedy ground 131.525
+supermarine spitfire 110 start up approved contact laguardia radar 129.05 for navigation instructions
+cessna 228 take off approved contact kennedy ground 136.625
+supermarine spitfire 109 start up not approved contact kennedy tower 135.85
+supermarine spitfire 0 start up not approved contact pearson radar 134.1
+big jet 967 contact phoenix ground 131.875 for further instructions
+cessna 387 start up not approved contact bush tower 128.3 for takeoff instructions
+boeing 855 contact pearson tower 128.025
+lockheed 282 contact laguardia tower 134.575 for navigation instructions
+boeing 518 take off not approved contact phoenix radar 131.75 for next instructions
+supermarine spitfire 386 land approved contact kennedy radar 120.875
+lockheed 376 ils approach approved contact phoenix tower 131.025
+lockheed 941 contact bush tower 130.225
+supermarine spitfire 254 taxi approved contact bush ground 123.125 for startup instructions
+lockheed 309 contact pearson ground 123.325
+big jet 325 take off approved contact phoenix tower 125.575 for taxi instructions
+airbus 17 land approved contact kennedy tower 117.25 for further instructions
+big jet 708 contact pearson ground 123.1 for further instructions
+cessna 523 contact laguardia tower 136.025 for startup instructions
+big jet 519 land approved contact laguardia tower 132.9
+airbus 692 contact bush radar 117.75 for takeoff instructions
+cessna 459 take off not approved contact pearson ground 123.725
+cessna 542 start up approved contact kennedy tower 122.75
+supermarine spitfire 420 taxi not approved contact pearson tower 126.9 for further instructions
+lockheed 461 ils approach not approved contact laguardia tower 136.475 for startup instructions
+lockheed 638 ils approach approved contact bush tower 117.625 for startup instructions
+boeing 174 contact phoenix ground 132.825
+airbus 208 start up not approved contact phoenix tower 135.275 for taxi instructions
+lockheed 962 contact laguardia radar 132.275

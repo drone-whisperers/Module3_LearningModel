@@ -230,27 +230,27 @@ class TrainingDataGenerator:
         all_aircraft_names = fly_aircraft_names.union(contact_aircraft_names)
 
         if to_file:
-            aircraft_name_file = open(GENERATED_KNOWN_AIRCRAFT_NAME_FILE, "w")
+            aircraft_name_file = open(GENERATED_KNOWN_AIRCRAFT_NAME_FILE, "a+")
             for aircraft_name in all_aircraft_names:
                 aircraft_name_file.write(f"{aircraft_name}\n")
             aircraft_name_file.close()
 
-            known_location_file = open(GENERATED_KNOWN_LOCATIONS_FILE, "w")
+            known_location_file = open(GENERATED_KNOWN_LOCATIONS_FILE, "a+")
             for known_location in known_locations:
                 known_location_file.write(f"{known_location}\n")
             known_location_file.close()
 
-            airport_entities_file = open(GENERATED_KNOWN_AIRPORT_ENTITY_FILE, "w")
+            airport_entities_file = open(GENERATED_KNOWN_AIRPORT_ENTITY_FILE, "a+")
             for airport_entitie in airport_entities:
                 airport_entities_file.write(f"{airport_entitie}\n")
             airport_entities_file.close()
 
             if filename is None:
-                training_data_file = open(GENERATED_TRAINING_DATA_FILE, "w")
+                training_data_file = open(GENERATED_TRAINING_DATA_FILE, "a+")
             else:
-                training_data_file = open(filename, "w")
+                training_data_file = open(filename, "a+")
 
-            label_matrix_file = open(GENERATED_LABEL_MATRIX_FILE, "w")
+            label_matrix_file = open(GENERATED_LABEL_MATRIX_FILE, "a+")
             label_matrix_file.write("fly,contact\n")
             for example in fly_training_data.keys():
                 training_data_file.write(f"{example}\n")
@@ -262,10 +262,9 @@ class TrainingDataGenerator:
 
             training_data_file.close()
             label_matrix_file.close()
-        else:
-            return fly_training_data, contact_training_data
 
-        return
+        return fly_training_data, contact_training_data
+
 
     # Method to generate a random value for a parameter.
     #

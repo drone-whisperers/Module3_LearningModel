@@ -457,18 +457,16 @@ class TrainingDataGenerator:
 
         if to_file:
             if filename is None:
-                f = open(GENERATED_TRAINING_DATA_FILE_NAME, "w")
+                f = open(GENERATED_TRAINING_DATA_FILE_NAME, "a+")
             else:
-                f = open(filename, "w")
+                f = open(filename, "a+")
 
             for i in range(len(training_examples)):
                 f.write(f"{training_examples[i]}\n")
 
             f.close()
-        else:
-            return training_examples
 
-        return
+        return training_examples
 
     # Method to generate a random value for a parameter.
     #
